@@ -1,0 +1,51 @@
+@import ../../styles/common.colors
+
+.isActive
+    color: $black!important
+
+.toggleSwitch
+    display: flex
+    align-items: center
+    
+    &__text
+        font-weight: 400
+        line-height: 1
+        color: $mediumGray
+
+    &__content
+        width: 54px
+        height: 28px
+        display: inline-block
+        cursor: pointer
+        position: relative
+
+    span
+        background-color: $gray
+        border-radius: 1rem
+        position: absolute
+        top: 0
+        right: 0
+        bottom: 0
+        left: 0
+
+        &::before
+            content: ''
+            width: 40%
+            height: 80%
+            background-color: white
+            border-radius: 50%
+            transition-duration: .2s
+            position: absolute
+            top: 9%
+            left: 8%
+
+    input
+        visibility: hidden
+
+        &:checked + span
+            background-color: $blue
+
+            &::before
+                transform: translateX(110%)
+            
+            

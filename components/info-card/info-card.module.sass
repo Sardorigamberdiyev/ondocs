@@ -1,0 +1,42 @@
+@import ../../styles/common.colors
+@import ../../styles/common.extend
+
+.infoCard
+    width: 256px
+
+    &__wrapper
+        margin-bottom: 22px
+        display: flex
+        justify-content: space-between
+        align-items: center
+
+    &__iconWrapper
+        width: 30px
+        height: 30px
+        display: flex
+        align-items: center
+        justify-content: center
+        border-radius: .5rem
+        position: relative
+        overflow: hidden
+
+        &__bgLayer
+            opacity: 0.1
+            position: absolute
+            top: 0
+            right: 0
+            bottom: 0
+            left: 0
+    &__text
+        font-weight: 500
+        color: $black
+        font-size: 18px
+
+    &__count
+        font-weight: bold
+        font-size: 24px
+        color: $blue
+
+    &__seenIcon
+        @extend %seenIcon
+        z-index: 1

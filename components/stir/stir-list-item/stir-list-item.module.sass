@@ -1,0 +1,38 @@
+@import ../../../styles/common.colors
+    
+.stirListItem
+    display: flex
+    padding: 15px
+    margin-bottom: 1.5rem
+    border-radius: .5rem
+    border: 1px solid $lightGray
+    background-color: white
+    cursor: pointer
+
+    &:nth-last-child(1)
+        margin-bottom: 0
+        
+
+    &__contentInfo
+        padding: 10px
+
+        ul
+            margin: 0
+            list-style-type: none
+            padding-left: 0
+
+            li
+                color: $black
+                font-size: 16px
+                padding: 6px 0
+
+                &:nth-child(1)
+                    padding-top: 0
+                &:nth-last-child(1)
+                    padding-bottom: 0
+                    
+    &__radioWrapper
+        input
+            width: 22px
+            height: 22px
+            cursor: pointer

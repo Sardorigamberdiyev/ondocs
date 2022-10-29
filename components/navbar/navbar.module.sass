@@ -1,0 +1,93 @@
+@import ../../styles/common.colors
+@import ../../styles/common.extend
+
+%centeredEquation
+    display: flex
+    align-items: center
+    justify-content: center
+
+.navbar
+    height: 88px
+    padding: 24px
+    background-color: white
+
+    &__wrapper
+        display: flex
+        align-items: center
+
+    &__leftContent
+        width: 50%
+        display: flex
+        flex-direction: column
+        &__name
+            font-weight: bold
+            font-size: 14px
+            color: $black
+            text-transform: uppercase
+        &__INN
+            font-weight: 400
+            font-size: 14px
+            color: $black
+            text-transform: uppercase
+
+    &__rightContent
+        width: 50%
+        display: flex
+        justify-content: space-between
+        align-items: center
+
+    &__balance
+        display: flex
+        align-items: center
+
+        &__iconWrapper
+            margin-right: 10px
+            padding: 11px
+            background-color: #188fff2f
+            border-radius: .5rem
+            @extend %centeredEquation
+
+        &__textWrapper
+            span
+                color: $black
+                font-size: 14px
+
+        &__quantity
+            color: $blue
+            font-size: 18px
+            font-weight: bold
+
+
+    &__bellBtn
+        padding: 0
+        background-color: white
+        @extend %centeredEquation
+
+    &__questionBtn
+        padding: 10px
+        border-radius: 50%
+        background-color: $lightGreen
+        @extend %centeredEquation
+
+        &:active
+            background-color: green
+
+    &__toolBtn
+        padding: 0
+        background-color: white
+        @extend %centeredEquation
+
+    &__walletIcon
+        @extend %walletIcon
+        background-color: $blue
+
+    &__bellIcon
+        @extend %bellIcon
+        background-color: $blue
+
+    &__questionIcon
+        @extend %questionIcon
+
+    &__toolIcon
+        @extend %toolIcon
+        background-color: black

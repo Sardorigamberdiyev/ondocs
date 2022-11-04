@@ -10,7 +10,7 @@ const AppBtn: FC<PropsWithChildren & IAppBtnProps> = (props) => {
 
     return (
         <button 
-        className={`${styles.appBtn} ${className}`}
+        className={`${className || ''} ${styles.appBtn}`}
         onClick={onClick}>{props.children}</button>
     )
 }

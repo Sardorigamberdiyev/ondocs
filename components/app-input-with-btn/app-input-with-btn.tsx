@@ -1,10 +1,7 @@
-import { FC, MouseEventHandler, PropsWithChildren } from 'react';
+import { FC, PropsWithChildren } from 'react';
+import { IAppInputWithBtnProps } from './app-input-with-btn.props';
 import AppBtn from '../app-btn';
 import styles from './app-input-with-btn.module.sass';
-
-interface IAppInputWithBtnProps {
-    onClick?: MouseEventHandler<HTMLButtonElement>;
-}
 
 const AppInputWithBtn: FC<PropsWithChildren<IAppInputWithBtnProps>> = (props) => {
     const { children, onClick } = props;

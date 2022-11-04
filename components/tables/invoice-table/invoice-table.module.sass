@@ -1,73 +1,17 @@
 @import ../../../styles/common.extend
 @import ../../../styles/common.colors
 
-%flexCenterBetween
-    display: flex
-    align-items: center
-    justify-content: space-between
-
 .invoiceTable
-
     &__table
-        width: 100%
-        margin-bottom: 1.5rem
-        border-collapse: collapse
-
-        td, 
-        th
-            border: 1px solid #535353
-            font-size: 12px
-            font-weight: 400
-
         thead
             th
                 width: 85px
-                padding: 15px
-                background-color: $tableBgGray
 
                 &:nth-child(1)
                     width: 42px
 
                 &:nth-child(2)
                     width: 185px
-
-        tbody
-            td
-                > input
-                    width: 100%
-                    border: none
-                    text-align: center
-                    color: $black
-
-                    &::-webkit-outer-spin-button,
-                    &::-webkit-inner-spin-button
-                        -webkit-appearance: none
-                        margin: 0
-
-                    &:focus
-                        outline-style: none
-                        font-size: 12px
-
-                &:nth-child(1)
-                    background-color: $tableBgGray
-                    text-align: center
-              
-
-    &__downloads
-        margin-bottom: 1.5rem
-        display: flex
-
-        &__item
-            display: flex
-            align-items: center
-            color: $black
-            font-size: 12px
-            font-weight: 400
-            margin-right: 28px
-            cursor: pointer
-
-            &:nth-last-child(1)
-                margin-right: 0
                 
     &__switches
         width: 60%
@@ -79,41 +23,3 @@
         &__item
             width: 34px
             height: 18px
-
-    &__footer
-        @extend %flexCenterBetween
-
-    &__btnsWrapper
-        @extend %flexCenterBetween
-
-    &__total
-        font-size: 18px
-        font-weight: 500
-        color: $darkGray
-
-    &__btn
-        padding: 0
-        display: flex
-        align-items: center
-        background-color: white
-        color: $blue
-
-        &:nth-last-child(1)
-            margin-left: 2rem
-
-    &__downloadIcon
-        @extend %downloadIcon
-        width: 14px
-        height: 14px
-        margin-right: .5rem
-        background-color: $darkGray
-
-    &__trashIcon
-        @extend %trashIcon
-        background-color: $blue
-        margin-right: .5rem
-
-    &__addIcon
-        @extend %addIcon
-        background-color: $blue
-        margin-right: .5rem

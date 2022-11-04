@@ -1,5 +1,4 @@
 import type { NextPage } from 'next';
-import { useState } from 'react';
 import { LayoutMain } from '../components/layouts';
 import withAuthGuard from '../components/hoc/with-auth.guard';
 import InfoCard from '../components/info-card';

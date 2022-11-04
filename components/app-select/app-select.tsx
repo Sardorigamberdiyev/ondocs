@@ -1,35 +1,44 @@
 import { FC, useId } from 'react';
-import Select, { SingleValue, ActionMeta, StylesConfig } from 'react-select';
+import Select, { StylesConfig } from 'react-select';
 import { Colors } from '../../common/color.variables';
+import { IAppSelectProps } from './app-select.props';
 
 export type Option = {
     label: string;
     value: string;
 }
 
-export interface IAppSelectProps {
-    loading: boolean;
-    className?: string;
-    value?: SingleValue<Option>;
-    valueList?: Option[];
-    placeholder?: string;
-    name?: string;
-    onChange?: (value: SingleValue<Option>, actionMeta: ActionMeta<Option>) => void
-}
-
-const customStyles: StylesConfig<Option, false> = {
-    indicatorSeparator: () => ({display: 'none'}),
-    control: (provided, state) => ({
-        ...provided,
-        height: '46px',
-        border: `1px solid ${state.menuIsOpen ? Colors.mediumGray : Colors.lightGray}`,
-        boxShadow: 'none',
-        ":hover": {borderColor: Colors.mediumGray}
-    })
-}
-
 const AppSelect: FC<IAppSelectProps> = (props) => {
-    const { valueList, value, className, loading, placeholder, name, onChange } = props;
+    const { 
+        valueList, 
+        value, 
+        className, 
+        loading, 
+        placeholder, 
+        name, 
+        onChange, 
+        styleTable 
+    } = props;
+
+    const customStyles: StylesConfig<Option, false> = {
+        indicatorSeparator: () => ({display: 'none'}),
+        valueContainer: (provided) => ({
+            ...provided,
+            ...(styleTable ? {padding: 0} : {})
+        }),
+        dropdownIndicator: (provided) => ({
+            ...provided,
+            ...(styleTable ? {padding: 0} : {})
+        }),
+        control: (provided, state) => ({
+            ...provided,
+            ":hover": {borderColor: Colors.mediumGray},
+            border: `1px solid ${state.menuIsOpen ? Colors.mediumGray : Colors.lightGray}`,
+            boxShadow: 'none',
+            height: styleTable ? '38px' : '46px',
+            ...(styleTable ? {border: 'none'} : {})
+        })
+    }
 
     return (
         <Select 

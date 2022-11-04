@@ -1,0 +1,27 @@
+@import ../../styles/common.colors
+
+.appTableRow
+    td
+        border: 1px solid #535353
+        font-size: 12px
+        font-weight: 400
+
+        > input
+            width: 100%
+            border: none
+            text-align: center
+            background-color: transparent
+            color: $black
+
+            &::-webkit-outer-spin-button,
+            &::-webkit-inner-spin-button
+                -webkit-appearance: none
+                margin: 0
+
+            &:focus
+                outline-style: none
+                font-size: 12px
+
+        &:nth-child(1)
+            background-color: $tableBgGray
+            text-align: center

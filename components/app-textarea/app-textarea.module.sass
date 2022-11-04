@@ -1,0 +1,22 @@
+@import ../../styles/common.colors
+
+.appTextarea
+    min-width: 100%
+    max-width: 100%
+    max-height: 210px
+    min-height: 210px
+    border: 1px solid $lightGray
+    border-radius: .5rem
+    padding: 12px
+    color: $black
+    font-size: 16px
+    transition-duration: .2s
+
+    &:focus
+        outline-style: none
+        border-color: $mediumGray
+
+
+    &::placeholder
+        font-size: 16px
+        color: $mediumGray

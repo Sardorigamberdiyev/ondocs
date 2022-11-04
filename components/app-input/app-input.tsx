@@ -35,14 +35,14 @@ const AppInput: FC<IAppInputProps> = (props) => {
     const isDisableTD = disableTD ? styles.appInput__disableTD : '';
 
     return (
-        <div className={`${className} ${styles.appInput} ${isFouceInput} ${isDisableTD}`}>
+        <div className={`${className || ''} ${styles.appInput} ${isFouceInput} ${isDisableTD}`}>
             <input 
             type={type}
             id={id}
             name={name}
             value={value}
             placeholder={placeholder}
-            className={`${classNameInput} ${isDisableTD}`}
+            className={`${classNameInput || ''} ${isDisableTD}`}
             onChange={onChange}
             onFocus={() => setInputFoucus(true)}
             onBlur={() => setInputFoucus(false)} />

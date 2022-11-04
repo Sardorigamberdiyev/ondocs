@@ -1,10 +1,4 @@
 @import ../../../styles/common.colors
-@import ../../../styles/common.extend
-
-%invoiceIconStyle
-    margin-right: .5rem
-    width: 16px
-    height: 16px
 
 .invoice
     margin-bottom: 24px
@@ -17,41 +11,3 @@
 
         &:nth-last-child(1)
             margin-bottom: 0
-
-    &__lowerBtns
-        display: flex
-        align-items: center
-        justify-content: space-between
-
-    &__wrapperBtns
-        display: flex
-        align-items: center
-
-    &__btnCancel, &__btnViewDoc, &__btnSave, &__btnSign
-        display: flex
-        align-items: center
-
-    &__btnCancel, &__btnSave
-        margin-right: 1rem
-
-    &__btnCancel
-        background-color: $pink
-
-    &__btnSign
-        background-color: $lightGreen
-
-    &__cancelIcon
-        @extend %cancelIcon
-        @extend %invoiceIconStyle
-
-    &__acceptIcon
-        @extend %acceptIcon
-        @extend %invoiceIconStyle
-            
-    &__diskIcon
-        @extend %diskIcon
-        @extend %invoiceIconStyle
-
-    &__seenIcon
-        @extend %seenIcon
-        @extend %invoiceIconStyle

@@ -1,14 +1,11 @@
 import { FC, PropsWithChildren } from 'react';
+import { IFormWrapperProps } from './form-wrapper.props';
 import styles from './form-wrapper.module.sass';
 
-interface IFormWrapperProps {
-    text: string;
-}
-
-const FormWrapper: FC<PropsWithChildren<IFormWrapperProps>> = ({children, text}) => {
+const FormWrapper: FC<PropsWithChildren<IFormWrapperProps>> = ({children, text, className}) => {
     return (
-        <div className={styles.formWrapper}>
-            <h2>{text}</h2>
+        <div className={`${styles.formWrapper} ${className || ''}`}>
+            {text && <h2>{text}</h2>}
             {children}
         </div>
     )

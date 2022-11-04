@@ -1,0 +1,27 @@
+@import ../../../styles/common.extend
+@import ../../../styles/common.colors
+
+.treatyInformationForm
+    &__partner
+        display: flex
+        align-items: center
+
+        &__btns
+            display: flex
+            align-items: center
+
+    &__btn
+        display: flex
+        align-items: center
+        justify-content: center
+        background-color: white
+        padding: 0
+        margin: 0 .5rem
+
+    &__addIcon
+        @extend %addIcon
+        background-color: $blue
+
+    &__trashIcon
+        @extend %trashIcon
+        background-color: $blue

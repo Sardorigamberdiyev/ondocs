@@ -1,4 +1,4 @@
-import { ChangeEventHandler, FocusEventHandler, MouseEventHandler } from 'react';
+import { ChangeEventHandler, MouseEventHandler } from 'react';
 
 export interface IAppInputProps {
     type: 'text' | 'number' | 'password';

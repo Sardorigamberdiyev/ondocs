@@ -5,12 +5,13 @@ import styles from './app-date.module.sass';
 import "react-datepicker/dist/react-datepicker.css";
 
 const AppDate: FC<IAppDateProps> = (props) => {
-    const { onChange, placeholder } = props;
+    const { onChange, placeholder, widthContainer } = props;
     const picker = useRef<DatePicker<never, undefined> | null>(null);
 
     return (
         <div className={styles.appDate}>
-            <div className={styles.appDate__container}>
+            <div className={styles.appDate__container}
+            style={widthContainer ? {width: widthContainer} : {}}>
                 <DatePicker 
                 ref={picker}
                 className={styles.appDate__datePicker} 

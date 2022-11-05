@@ -1,8 +1,5 @@
 @import ../../styles/common.colors
 
-.isActive
-    color: $black!important
-
 .toggleSwitch
     display: flex
     align-items: center
@@ -11,6 +8,9 @@
         font-weight: 400
         line-height: 1
         color: $mediumGray
+
+    &__isActive
+        color: $black
 
     &__content
         width: 54px
@@ -47,5 +47,24 @@
 
             &::before
                 transform: translateX(110%)
+
+    &__type2
+        width: 35px
+        height: 12px
+
+        span
+            &::before
+                box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.15)
+                width: 16px
+                height: 16px
+                top: -2px
+                left: -4px
+        
+        input
+            &:checked + span
+                background-color: $aqua
+
+                &::before
+                    transform: translateX(160%)
             
             

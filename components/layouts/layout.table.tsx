@@ -1,19 +1,16 @@
 import { FC, PropsWithChildren } from 'react';
+import { ILayoutTableProps } from './layout.interfaces';
 import AppBtn from '../app-btn';
 import styles from './layout.module.sass';
-
-interface ILayoutTableProps {
-    total?: string;
-    onRemoveRow: () => void;
-    onAddRow: () => void;
-    onDownloadXlsx?: () => void;
-    onDownloadSample?: () => void;
-    onDownloadUnit?: () => void;
-}
 
 const LayoutTable: FC<PropsWithChildren<ILayoutTableProps>> = (props) => {
     const { 
         total, 
+        totalDisabled,
+        addBtnText,
+        removeBtnText,
+        className,
+        classNameBtn,
         onRemoveRow, 
         onAddRow, 
         onDownloadXlsx, 
@@ -23,8 +20,9 @@ const LayoutTable: FC<PropsWithChildren<ILayoutTableProps>> = (props) => {
     } = props;
 
     return (
-        <div className={styles.layoutTable}>
-            <div className={styles.layoutTable__downloads}>
+        <div className={`${styles.layoutTable} ${className || ''}`}>
+            <div className={styles.layoutTable__downloads}
+            style={onDownloadSample || onDownloadXlsx || onDownloadUnit ? {} : {margin: '0'}}>
                 {onDownloadXlsx && (
                     <div className={styles.layoutTable__downloads__item}
                     onClick={onDownloadXlsx}>
@@ -49,17 +47,17 @@ const LayoutTable: FC<PropsWithChildren<ILayoutTableProps>> = (props) => {
             </div>
             {children}
             <div className={styles.layoutTable__footer}>
-                <div className={styles.layoutTable__total}>Итого: {total || '0,00'}</div>
+                <div className={styles.layoutTable__total}>{totalDisabled ? '' : `Итого: ${total || '0,00'}`}</div>
                 <div className={styles.layoutTable__btnsWrapper}>
-                    <AppBtn className={styles.layoutTable__btn}
+                    <AppBtn className={`${styles.layoutTable__btn} ${classNameBtn || ''}`}
                     onClick={onRemoveRow}>
                         <i className={styles.layoutTable__trashIcon} />
-                        <span>Удалить строку</span>
+                        <span>{removeBtnText || 'Удалить строку'}</span>
                     </AppBtn>
-                    <AppBtn className={styles.layoutTable__btn}
+                    <AppBtn className={`${styles.layoutTable__btn} ${classNameBtn || ''}`}
                     onClick={onAddRow}>
                         <i className={styles.layoutTable__addIcon} />
-                        <span>Добавить строку</span>
+                        <span>{addBtnText || 'Добавить строку'}</span>
                     </AppBtn>
                 </div>
             </div>

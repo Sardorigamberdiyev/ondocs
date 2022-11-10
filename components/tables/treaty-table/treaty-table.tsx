@@ -4,7 +4,9 @@ import { LayoutTable } from '../../layouts';
 import AppTableRow from '../../app-table-row';
 import styles from './treaty-table.module.sass';
 import TreatyTableRow from '../treaty-table-row';
-import LastRowTable from '../last-row-table';
+import AppTableFoot from '../../app-table-foot';
+import AppTableBody from '../../app-table-body';
+import AppTableHead from '../../app-table-head';
 
 const TreatyTable: FC = () => {
     const [tableRows, setTableRows] = useState([uuidv4()]);
@@ -24,8 +26,8 @@ const TreatyTable: FC = () => {
         onDownloadXlsx={() => console.log('xlsx')}
         onDownloadSample={() => console.log('sample')}>
             <table className={styles.treatyTable__table}>
-                <thead>
-                    <tr>
+                <AppTableHead>
+                    <AppTableRow>
                         <th>№</th>
                         <th>Наименование товаров (услуг)*</th>
                         <th>Идентификационный код и название товаров(услуг)*</th>
@@ -37,9 +39,9 @@ const TreatyTable: FC = () => {
                         <th>НДС, %</th>
                         <th>НДС, Сумма*</th>
                         <th>Всего*</th>
-                    </tr>
-                </thead>
-                <tbody>
+                    </AppTableRow>
+                </AppTableHead>
+                <AppTableBody>
                     {
                         tableRows.map((itemId, index) => (
                             <TreatyTableRow 
@@ -48,8 +50,16 @@ const TreatyTable: FC = () => {
                             getDataInRow={(rowData) => console.log(rowData)} />
                         ))
                     }
-                    <LastRowTable />
-                </tbody>
+                </AppTableBody>
+                <AppTableFoot>
+                    <AppTableRow>
+                        <td colSpan={7}>Итого:</td>
+                        <td>0.00</td>
+                        <td></td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                    </AppTableRow>
+                </AppTableFoot>
             </table>
         </LayoutTable>
     )

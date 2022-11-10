@@ -1,4 +1,5 @@
 import { FC, useState, useEffect } from 'react';
+import { ITtnTransportationData } from './ttn-transportation-data.interface';
 import AppDate from '../../app-date';
 import AppInput from '../../app-input';
 import AppLabel from '../../app-label';
@@ -6,13 +7,36 @@ import ToggleSwitch from '../../toggle-switch';
 import RowForm from '../row-form';
 import styles from './ttn-transportation-form.module.sass';
 
-const TtnTransportationForm: FC = () => {
+interface TtnTransportationFormProps {
+    getFormData?: (formData: ITtnTransportationData) => void;
+}
+
+const TtnTransportationForm: FC<TtnTransportationFormProps> = ({getFormData}) => {
     const [isStock, setIsStock] = useState(true);
     const [isFromSellerToBuyer, setIsFromSellerToBuyer] = useState(false);
     const [isTrailer, setIsTrailer] = useState(false);
     const [isSemitrailer, setIsSemitrailer] = useState(false);
-    const [isShippingAutomobile, setIsShippingAutomobile] = useState(false);
+    const [isShippingAutomobile, setIsShippingAutomobile] = useState(true);
     const [isShippingRailway, setIsShippingRailway] = useState(false);
+
+    useEffect(() => {
+        if (getFormData)
+            getFormData({
+                isStock,
+                isFromSellerToBuyer,
+                isTrailer,
+                isSemitrailer,
+                isShippingAutomobile,
+                isShippingRailway
+            })
+    }, [
+        isStock,
+        isFromSellerToBuyer,
+        isTrailer,
+        isSemitrailer,
+        isShippingAutomobile,
+        isShippingRailway
+    ]);
 
     return (
         <>
@@ -43,7 +67,7 @@ const TtnTransportationForm: FC = () => {
                 <>
                     <RowForm
                     leftContent={
-                        <>                        
+                        <>
                             <AppLabel text="К договору*">
                                 <AppInput type="number"
                                 placeholder="Номер договора" />

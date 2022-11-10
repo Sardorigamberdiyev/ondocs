@@ -28,9 +28,9 @@ const Akt: FC = () => {
                     <AktMiddleForm />
                 </AppCard>
                 <AppCard className={styles.akt__card}>
-                    <FormWrapper text="АКТ"
-                    className={styles.akt__textarea}>
+                    <FormWrapper text="АКТ">
                         <AppTextarea 
+                        className={styles.akt__textarea}
                         placeholder={aktPlaceholder} />
                     </FormWrapper>
                 </AppCard>

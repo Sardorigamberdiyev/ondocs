@@ -31,6 +31,7 @@ const Sidebar: FC = () => {
                             <li onClick={() => router.push('/document-creation/procuratory')}>Доверенность</li>
                             <li onClick={() => router.push('/document-creation/invoice')}>Счет-фактура</li>
                             <li onClick={() => router.push('/document-creation/akt')}>Акт</li>
+                            <li onClick={() => router.push('/document-creation/akt-revise')}>Акт Сверки</li>
                             <li onClick={() => router.push('/document-creation/ttn')}>ТТН</li>
                         </ul>
                     </div>

@@ -11,24 +11,27 @@ const ToggleSwitch: FC<IToggleSwitchProps> = (props) => {
         inputName, 
         className,
         classNameText, 
+        classNameContent,
         checked, 
         styleType
     } = props;
 
+    const classNames = `${styles.toggleSwitch} ${className || ''}`;
+    const classNamesText =  `${styles.toggleSwitch__text} ${classNameText || ''} ${(checked ?? isActive) ? styles.toggleSwitch__isActive : ''}`;
+    const classNamesContent = `${styles.toggleSwitch__content} ${classNameContent || ''} ${styleType === 'type-2' ? styles.toggleSwitch__type2 : ''}`;
+
     const toggleSwitchText = text && (
-        <div className={
-            `${styles.toggleSwitch__text} ${isActive && styles.toggleSwitch__isActive} ${classNameText || ''}`
-        }
+        <div className={classNamesText}
         style={textRowReverse ? {marginLeft: '12px'} : {marginRight: '12px'}}>
             {text}
         </div>
     );
 
     return (
-        <div className={`${styles.toggleSwitch} ${className || ''}`}
+        <div className={classNames}
         style={textRowReverse ? {flexDirection: 'row-reverse'} : {}}>
             {toggleSwitchText}
-            <label className={`${styles.toggleSwitch__content} ${styleType === 'type-2' ? styles.toggleSwitch__type2 : ''}`}>
+            <label className={classNamesContent}>
                 <input type="checkbox"
                 name={inputName}
                 checked={checked ?? isActive}

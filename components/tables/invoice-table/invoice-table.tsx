@@ -5,7 +5,10 @@ import { Option } from '../../app-select/app-select';
 import ToggleSwitch from '../../toggle-switch';
 import InvoiceTableRow from '../invoice-table-row';
 import styles from './invoice-table.module.sass';
-import LastRowTable from '../last-row-table';
+import AppTableHead from '../../app-table-head';
+import AppTableRow from '../../app-table-row';
+import AppTableBody from '../../app-table-body';
+import AppTableFoot from '../../app-table-foot';
 
 const InvoiceTable: FC = () => {
     const [tableRows, setTableRows] = useState<string[]>([uuidv4()]);
@@ -39,21 +42,25 @@ const InvoiceTable: FC = () => {
             onDownloadUnit={onDownloadUnitHandler}>
                 <div className={styles.invoiceTable__switches}>
                     <ToggleSwitch text="Акциз" 
-                    className={styles.invoiceTable__switches__item}
+                    classNameText={styles.invoiceTable__switches__itemText}
+                    classNameContent={styles.invoiceTable__switches__itemContent}
                     textRowReverse />
                     <ToggleSwitch text="Акциз"
-                    className={styles.invoiceTable__switches__item} 
+                    classNameText={styles.invoiceTable__switches__itemText}
+                    classNameContent={styles.invoiceTable__switches__itemContent} 
                     textRowReverse />
                     <ToggleSwitch text="Есть льгота" 
-                    className={styles.invoiceTable__switches__item}
+                    classNameText={styles.invoiceTable__switches__itemText}
+                    classNameContent={styles.invoiceTable__switches__itemContent}
                     textRowReverse />
                     <ToggleSwitch text="Обратный отсчёт" 
-                    className={styles.invoiceTable__switches__item}
+                    classNameText={styles.invoiceTable__switches__itemText}
+                    classNameContent={styles.invoiceTable__switches__itemContent}
                     textRowReverse />
                 </div>
                 <table className={styles.invoiceTable__table}>
-                    <thead>
-                        <tr>
+                    <AppTableHead>
+                        <AppTableRow>
                             <th>№</th>
                             <th>ИКПУ и наименование товаров (работ, услуг)*</th>
                             <th>Описание товаров (работ, услуг)*</th>
@@ -65,9 +72,9 @@ const InvoiceTable: FC = () => {
                             <th>НДС, %</th>
                             <th>НДС, Сумма*</th>
                             <th>Всего*</th>
-                        </tr>
-                    </thead>
-                    <tbody>
+                        </AppTableRow>
+                    </AppTableHead>
+                    <AppTableBody>
                         {
                             tableRows.map((item, index) => (
                                 <InvoiceTableRow 
@@ -78,8 +85,16 @@ const InvoiceTable: FC = () => {
                                     getDataInRow={getDataInRow} />
                             ))
                         }
-                        <LastRowTable />
-                    </tbody>
+                    </AppTableBody>
+                    <AppTableFoot>
+                        <AppTableRow>
+                            <td colSpan={7}>Итого:</td>
+                            <td>0.00</td>
+                            <td></td>
+                            <td>0.00</td>
+                            <td>0.00</td>
+                        </AppTableRow>
+                    </AppTableFoot>
                 </table>
             </LayoutTable>
         </div>

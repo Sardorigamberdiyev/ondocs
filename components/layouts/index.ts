@@ -3,6 +3,7 @@ import LayoutList from './layout.list';
 import LayoutMain from './layout.main';
 import LayoutTable from './layout.table';
 import LayoutTableRow from './layout.table-row';
+import LayoutSetting from './layout.setting';
 import LayoutDocumentCreation from './layout.document-creation';
 
 export {
@@ -11,5 +12,6 @@ export {
     LayoutMain,
     LayoutTable,
     LayoutTableRow,
+    LayoutSetting,
     LayoutDocumentCreation
 }

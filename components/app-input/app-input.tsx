@@ -42,6 +42,7 @@ const AppInput: FC<IAppInputProps> = (props) => {
             name={name}
             value={value}
             placeholder={placeholder}
+            style={!iconUrl ? {width: '100%'} : {}}
             className={`${classNameInput || ''} ${isDisableTD}`}
             onChange={onChange}
             onFocus={() => setInputFoucus(true)}

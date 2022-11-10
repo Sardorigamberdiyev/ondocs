@@ -1,13 +1,7 @@
 import { FC, PropsWithChildren } from 'react';
+import { ILayoutDocCreationProps } from './layout.interfaces';
 import AppBtn from '../app-btn';
 import styles from './layout.module.sass';
-
-interface ILayoutDocCreationProps {
-    cancelHandler?: () => void;
-    viewDocHandler?: () => void;
-    saveHandler?: () => void;
-    signHandler?: () => void;
-}
 
 const LayoutDocumentCreation: FC<PropsWithChildren<ILayoutDocCreationProps>> = (props) => {
     const { children, cancelHandler, viewDocHandler, saveHandler, signHandler } = props;

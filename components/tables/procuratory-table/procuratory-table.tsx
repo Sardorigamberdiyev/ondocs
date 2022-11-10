@@ -1,5 +1,8 @@
 import { FC, useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
+import AppTableBody from '../../app-table-body';
+import AppTableHead from '../../app-table-head';
+import AppTableRow from '../../app-table-row';
 import { LayoutTable } from '../../layouts';
 import ProcuratoryTableRow from '../procuratory-table-row';
 import styles from './procuratory-table.module.sass';
@@ -29,16 +32,16 @@ const ProcuratoryTable: FC = () => {
             onDownloadXlsx={downloadXlsxHandler}
             onDownloadSample={downloadSampleHandler}>
                 <table className={styles.procuratoryTable__table}>
-                    <thead>
-                        <tr>
+                    <AppTableHead>
+                        <AppTableRow>
                             <th>№</th>
                             <th>Идентификационный код и название товаров (услуг)</th>
                             <th>Наименование товаров (услуг)*</th>
                             <th>Ед измер.*</th>
                             <th>Кол-во*</th>
-                        </tr>
-                    </thead>
-                    <tbody>
+                        </AppTableRow>
+                    </AppTableHead>
+                    <AppTableBody>
                         {
                             tableRows.map((rowId, index) => (
                                 <ProcuratoryTableRow 
@@ -48,7 +51,7 @@ const ProcuratoryTable: FC = () => {
                                 getDataInRow={getDataInRow} />
                             ))
                         }
-                    </tbody>
+                    </AppTableBody>
                 </table>
             </LayoutTable>
         </div>

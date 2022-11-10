@@ -6,8 +6,8 @@
     align-items: center
     justify-content: space-between
 
-/* --------------- LayoutList -------------------*/
-.layoutList
+/* --------------- LayoutLogin -------------------*/
+.layoutLogin
     height: 100vh
     display: flex
 
@@ -52,21 +52,79 @@
         padding: 32px
         background-color: $lightBlue
 
+/* --------------- LayoutSetting ----------------- */
+.layoutSetting
+
+    &__card
+        margin-bottom: 1.5rem
+
+    &__navListWrapper
+        margin-bottom: 1rem
+        display: flex
+
+    &__navList
+        overflow: hidden
+        display: flex
+        background-color: white
+        border-radius: .5rem
+        padding: 0
+        margin: 0
+        list-style-type: none
+
+        &__item
+            position: relative
+            padding: 12px 24px
+            text-align: center
+            box-shadow: -1px 0 10px 1px rgba(0, 0, 0, .04)
+            color: $black
+            cursor: pointer
+
+            &::before
+                content: ''
+                width: 0
+                height: 2px
+                background-color: $blue
+                transition-duration: .2s
+                position: absolute
+                left: 0
+                bottom: 0
+    
+    &__btns
+        display: flex
+        align-items: center
+
+        &__btn
+            display: flex
+            align-items: center
+            font-size: 16px
+
+            &:nth-child(1)
+                background-color: $lightGreen
+
+            &:nth-child(2)
+                background-color: $pink
+                margin-left: 12px
+                    
+    &__active
+        color: $blue
+
+        &::before
+            width: 100%
+
+    &__cancelIcon
+        margin-right: 12px
+        @extend %cancelIcon
+
+    &__acceptIcon
+        margin-right: 12px
+        @extend %acceptIcon
+
 /* --------------- LayoutTable -------------------*/
 .layoutTable
     table
         width: 100%
         margin-bottom: 1.5rem
         border-collapse: collapse
-        
-        thead
-            tr
-                th
-                    border: 1px solid #535353
-                    font-size: 12px
-                    font-weight: 400
-                    padding: 15px 12px
-                    background-color: $tableBgGray
 
     &__footer
         @extend %flexCenterBetween

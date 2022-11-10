@@ -2,8 +2,8 @@ import { CSSProperties, FC } from 'react';
 import styles from './row-form.module.sass';
 
 interface IRowFormProps {
-    leftContent: JSX.Element;
-    rightContent: JSX.Element;
+    leftContent?: JSX.Element;
+    rightContent?: JSX.Element;
     leftContentStyle?: CSSProperties;
     rightContentStyle?: CSSProperties;
 }

@@ -1,9 +1,11 @@
 import { FC, useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
-import AppTableRow from '../../app-table-row';
 import { LayoutTable } from '../../layouts';
+import AppTableBody from '../../app-table-body';
+import AppTableFoot from '../../app-table-foot';
+import AppTableHead from '../../app-table-head';
+import AppTableRow from '../../app-table-row';
 import AktTableRow from '../akt-table-row';
-import LastRowTable from '../last-row-table';
 import styles from './akt-table.module.sass';
 
 const AktTable: FC = () => {
@@ -24,8 +26,8 @@ const AktTable: FC = () => {
         onDownloadXlsx={() => console.log('xlsx')}
         onDownloadSample={() => console.log('sample')}>
             <table className={styles.aktTable__table}>
-                <thead>
-                    <tr>
+                <AppTableHead>
+                    <AppTableRow>
                         <th>№</th>
                         <th>Идентификационный код и название товара (услуг)</th>
                         <th>Наименование товаров (услуг)*</th>
@@ -36,9 +38,9 @@ const AktTable: FC = () => {
                         <th>НДС, %</th>
                         <th>НДС, Сумма*</th>
                         <th>Всего*</th>
-                    </tr>
-                </thead>
-                <tbody>
+                    </AppTableRow>
+                </AppTableHead>
+                <AppTableBody>
                     {
                         tableRows.map((itemId, index) => (
                             <AktTableRow 
@@ -47,8 +49,16 @@ const AktTable: FC = () => {
                             rowId={itemId} />
                         ))
                     }
-                    <LastRowTable firstTdColSpan={6} />
-                </tbody>
+                </AppTableBody>
+                <AppTableFoot>
+                    <AppTableRow>
+                        <td colSpan={6}>Итого:</td>
+                        <td>0.00</td>
+                        <td></td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                    </AppTableRow>
+                </AppTableFoot>
             </table>
         </LayoutTable>
     )

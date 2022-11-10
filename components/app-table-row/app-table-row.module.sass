@@ -1,16 +1,26 @@
 @import ../../styles/common.colors
 
+%cellStyle
+    border: 0.5px solid #535353
+    font-size: 12px
+    font-weight: 400
+    color: $darkGray
+
 .appTableRow
-    td
-        border: 1px solid #535353
-        font-size: 12px
-        font-weight: 400
+    th
+        @extend %cellStyle
+
+    td,
+    th
+        @extend %cellStyle
 
         > input
             width: 100%
+            height: 100%
             border: none
-            text-align: center
             background-color: transparent
+            font-size: 12px
+            text-align: center
             color: $black
 
             &::-webkit-outer-spin-button,
@@ -20,8 +30,3 @@
 
             &:focus
                 outline-style: none
-                font-size: 12px
-
-        &:nth-child(1)
-            background-color: $tableBgGray
-            text-align: center

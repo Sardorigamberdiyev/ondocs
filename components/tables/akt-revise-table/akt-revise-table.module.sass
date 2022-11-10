@@ -1,0 +1,94 @@
+@import ../../../styles/common.colors
+@import ../../../styles/common.extend
+
+%tableTextStyle
+    font-weight: 500
+    font-size: 16px
+
+%allCellStyle
+    thead, 
+    tbody,
+    tfoot
+        tr
+            th,
+            td
+                padding: 12px
+                @extend %tableTextStyle
+
+                > input
+                    @extend %tableTextStyle
+
+.aktReviseTable
+
+    &__btns
+        display: flex
+        align-items: center
+        margin-bottom: 1.5rem
+        justify-content: flex-end
+
+        &__btn
+            padding: 0
+            font-size: 16px
+            background-color: white
+            align-items: center
+            display: flex
+            color: $blue
+
+            &:nth-child(1)
+                margin-right: 1rem
+
+    &__table
+        @extend %allCellStyle
+
+        thead
+            tr
+                th
+                    &:nth-child(1),
+                    &:nth-child(2)
+                        width: 12.5%
+                        background-color: white
+
+        tbody
+            tr
+                td
+                    width: 12.5%
+
+                    &:nth-child(1)
+                        background-color: white
+                        
+                &:nth-child(1)
+                    td
+                        &:nth-child(1),
+                        &:nth-child(4)
+                            width: 25%
+
+        tfoot
+            tr
+                td
+                    width: 12.5%
+
+                    &:nth-child(1),
+                    &:nth-child(4)
+                        width: 25%
+                        padding: 12px
+                        text-align: center
+
+    &__cellDisable
+        background-color: $tableBgGray
+
+    &__dateInput
+        border: none
+        padding: 0
+
+    &__datePicker
+        height: 24px
+
+    &__addIcon
+        @extend %addIcon
+        margin-right: .5rem
+        background-color: $blue
+
+    &__trashIcon
+        @extend %trashIcon
+        margin-right: .5rem
+        background-color: $blue

@@ -5,6 +5,7 @@ export interface IToggleSwitchProps {
     checked?: boolean;
     className?: string;
     classNameText?: string;
+    classNameContent?: string;
     styleType?: 'type-2';
     text?: string;
     textRowReverse?: boolean;

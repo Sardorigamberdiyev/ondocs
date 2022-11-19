@@ -1,0 +1,66 @@
+@import ../../styles/common.colors
+@import ../../styles/common.extend
+
+%iconStyle
+    width: 14px
+    height: 14px
+
+.appPagination
+    height: 40px
+    display: flex
+    align-items: center
+    padding: 0 12px
+    margin: 0
+    list-style-type: none
+
+    &__break
+        background-color: white
+
+    &__breakLink
+        display: inline-block
+        padding: 10px 0
+        font-size: 18px
+        line-height: 1
+
+    &__next,
+    &__prev
+        display: flex
+        align-items: center
+        font-size: 14px
+        padding: 12px
+
+        span
+            padding: 0 .5rem
+
+    &__pageLink
+        color: $black
+        cursor: pointer
+        font-size: 14px
+        font-weight: 500
+        line-height: 1
+        padding: 12px 16px
+        display: inline-block
+
+        &__active
+            color: $blue
+
+    &__page
+        background-color: white
+
+        &:nth-child(2)
+            border-top-left-radius: .5rem
+            border-bottom-left-radius: .5rem
+            margin-left: 2rem
+
+        &:nth-last-child(2)
+            border-top-right-radius: .5rem
+            border-bottom-right-radius: .5rem
+            margin-right: 2rem
+
+    &__rightArrowIcon
+        @extend %rightArrowIcon
+        @extend %iconStyle
+
+    &__leftArrowIcon
+        @extend %leftArrowIcon
+        @extend %iconStyle

@@ -1,0 +1,98 @@
+@import ../../../styles/common.colors
+@import ../../../styles/common.extend
+
+$tableRowBorder: 1px solid rgba(0, 0, 0, .1)
+
+%flexCenterBetween
+    display: flex
+    align-items: center
+    justify-content: space-between
+
+.codes
+    &__searchAdd
+        @extend %flexCenterBetween
+        position: relative
+        margin-bottom: .5rem
+
+        &__search
+            width: 88%
+
+        i
+            width: 18px
+            height: 18px
+
+        &__resultList
+            position: absolute
+            top: 110%
+            left: 0
+
+            ul
+                background-color: white
+                border-radius: .5rem
+                box-shadow: 0 4px 10px 0 rgba(0, 0, 0, .08)
+                list-style-type: none
+                padding: 0
+                margin: 0
+
+                li
+                    color: $black
+                    cursor: pointer
+                    min-width: 380px
+                    padding: 1.25rem .75rem
+                    font-weight: 500
+                    transition-duration: .2s
+
+                    &:hover
+                        color: $blue
+
+    &__header
+        margin-bottom: .5rem
+        @extend %flexCenterBetween
+
+        h4
+            color: $black
+            margin: 0
+            font-weight: 500
+
+    &__table
+        margin: 2rem 0
+
+        thead
+            tr
+                th
+                    border-color: white
+                    background-color: transparent
+                    font-size: 14px
+                    font-weight: 500
+                    border-bottom: $tableRowBorder
+
+                    &:nth-child(1)
+                        width: 100px
+
+                    &:nth-child(2),
+                    &:nth-child(3)
+                        width: 200px
+
+    &__miniInfo
+        color: $mediumGray
+        max-width: 700px
+        font-size: 12px
+
+        a
+            text-decoration: none
+
+    &__excelDownloads
+        display: flex
+        align-items: center
+        cursor: pointer
+
+    &__excelText
+        color: $lightGreen
+        font-size: 14px
+
+    &__excelIcon
+        @extend %excelIcon
+        width: 24px
+        height: 24px
+        margin-right: .5rem
+        background-color: $lightGreen

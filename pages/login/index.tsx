@@ -2,12 +2,13 @@ import { FC, useState, useEffect } from 'react';
 import Link from 'next/link';
 
 import { EimzoService, IStirWithId } from '../../services/eimzo.service';
-import { LayoutLogin, LayoutList } from '../../components/layouts';
+import { LayoutLogin } from '../../components/layouts';
 import { StirWarn, StirList, StirEmpty } from '../../components/stir';
 import { useRouter } from 'next/router';
 import AppBtn from '../../components/app-btn';
 import styles from './login.module.sass';
 import Cookies from 'js-cookie';
+import AppList from '../../components/app-list';
 
 const Login: FC = () => {
     const [stirs, setStirs] = useState<IStirWithId[] | null>(null);
@@ -66,7 +67,7 @@ const Login: FC = () => {
         <LayoutLogin 
         contentText={contentText}
         contentTextMB={contentTextMB}>
-            <LayoutList
+            <AppList
             arrayData={stirs}
             error={error}
             loading={loading}
@@ -84,7 +85,7 @@ const Login: FC = () => {
                         <a className={styles.login__linkLogUp}>Войти через пароль</a>
                     </Link>
                 </div>
-            </LayoutList>
+            </AppList>
         </LayoutLogin>
     )
 }

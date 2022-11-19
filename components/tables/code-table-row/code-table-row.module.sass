@@ -1,0 +1,35 @@
+@import ../../../styles/common.colors
+@import ../../../styles/common.extend
+
+$tableRowBorder: 1px solid rgba(0, 0, 0, .1)
+
+.codeTableRow
+    td
+        border-color: white
+        border-bottom: $tableRowBorder
+        background-color: transparent
+        font-size: 14px
+        font-weight: 500
+        padding: 12px
+
+        &:nth-child(1)
+            border-left: $tableRowBorder
+            background-color: transparent
+
+        &:nth-last-child(1)
+            border-right: $tableRowBorder
+            padding-right: 1.5rem
+            display: flex
+            justify-content: flex-end
+
+    &__btn
+        color: $pink
+        padding: 0
+        display: flex
+        align-items: center
+        background-color: transparent
+
+    &__trashIcon
+        @extend %trashIcon
+        margin-right: 12px
+        background-color: $pink

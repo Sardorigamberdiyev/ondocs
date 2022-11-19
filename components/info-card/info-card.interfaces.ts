@@ -3,4 +3,5 @@ export interface InfoCardProps {
     count: string | number;
     iconUrl: string;
     iconColor: string;
+    go: string;
 }

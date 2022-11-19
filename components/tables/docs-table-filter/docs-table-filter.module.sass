@@ -1,0 +1,89 @@
+@import ../../../styles/common.colors
+@import ../../../styles/common.extend
+
+.docsTableFilter
+    padding: 0 1.5rem 0 0
+    display: flex
+    align-items: center
+    justify-content: space-between
+
+    &__list
+        min-width: 70%
+        display: flex
+        padding: 0
+        margin: 0
+        list-style-type: none
+
+        &__item
+            padding: 12px 1.5rem
+            color: $black
+            cursor: pointer
+            display: flex
+            background-color: #F8F8F8
+            transition-duration: .2s
+            align-items: center
+            font-size: 15px
+            font-weight: 500
+
+            &__active
+                background-color: white
+                color: $blue
+                box-shadow: inset -1px 0px 0px $transparentBlack, inset 0px -2px 0px $blue
+
+            &:nth-child(1)
+                border-top-left-radius: .5rem
+
+            &:nth-child(2)
+                div
+                    background-color: $pink
+
+            &:nth-child(3)
+                div
+                    background-color: $lightGreen
+
+            &:nth-child(4)
+                div
+                    background-color: $lightRed
+
+            &:nth-last-child(1)
+                border-top-right-radius: .5rem
+
+                div
+                    background-color: $lightGray
+
+            div
+                width: 1rem
+                height: 1rem
+                border-radius: 50%
+                background-color: $lightGray
+
+            span
+                padding-left: .5rem
+
+    &__iconWrapper
+        cursor: pointer
+
+    &__search
+        width: 25%
+        display: flex
+        align-items: center
+        justify-content: space-between
+
+        input
+            border: none
+            background-color: transparent
+            font-size: 16px
+            color: $black
+
+            &:focus
+                outline-style: none
+
+            &::placeholder
+                font-size: 16px
+                color: $mediumGray
+
+    &__searchIcon
+        @extend %searchIcon
+        width: 20px
+        height: 20px
+        background-color: $blue

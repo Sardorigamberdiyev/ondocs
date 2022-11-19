@@ -1,9 +1,9 @@
 import { FC, PropsWithChildren } from 'react';
-import { ILayoutListProps } from './layout.interfaces';
+import { IAppListProps } from './app-list.interfaces';
 import Spinner from '../spinner';
 import ErrorIndicator from '../error-indicator';
 
-const LayoutList: FC<PropsWithChildren<ILayoutListProps>> = (props) => {
+const AppList: FC<PropsWithChildren<IAppListProps>> = (props) => {
     const { children, arrayData, loading, error, customSpinner, customErrorIndicator, customEmpty } = props;
 
     const spinner = loading && !error ? 
@@ -32,4 +32,4 @@ const LayoutList: FC<PropsWithChildren<ILayoutListProps>> = (props) => {
     );
 }
 
-export default LayoutList;
+export default AppList;

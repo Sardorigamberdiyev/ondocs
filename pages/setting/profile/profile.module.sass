@@ -1,0 +1,14 @@
+@import ../../../styles/common.colors
+
+.profile
+    &__switches
+        display: flex
+        flex-direction: column
+
+        &__item
+            margin-bottom: 1rem
+
+            input
+                &:checked + span
+                    background-color: $lightGreen!important
+                    

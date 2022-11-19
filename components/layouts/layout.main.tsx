@@ -7,20 +7,29 @@ import Sidebar from '../sidebar';
 import styles from './layout.module.sass';
 
 const LayoutMain: FC<PropsWithChildren<ILayoutMainProps>> = (props) => {
-    const { children, pageName, btnBackPageText, btnBackPageLink } = props;
+    const { children, pageName, btnBackPageText,  isUrlInfo, prePathText, currentPathText } = props;
     const router = useRouter();
 
     const pgName = pageName && <h1>{pageName}</h1>
-    const btnBack = btnBackPageLink && (
+    const btnBack = btnBackPageText && (
         <AppBtn 
-        onClick={() => router.push(btnBackPageLink)}>
+        onClick={() => router.back()}>
             {btnBackPageText}
         </AppBtn>
     );
 
-    const pageHeader = (pageName || btnBackPageLink || btnBackPageText) && (
+    const pathInfo = isUrlInfo && (
+        <div className={styles.layoutMain__pathInfo}>
+            <div className={styles.layoutMain__pathInfo__prePath}>{prePathText}</div>
+            <i className={styles.layoutMain__rightArrowIcon} />
+            <div className={styles.layoutMain__pathInfo__currentPath}>{currentPathText || router.query.id}</div>
+        </div>
+    );
+
+    const pageHeader = (pageName || btnBackPageText || isUrlInfo) && (
         <div className={styles.layoutMain__pageHeader}>
             {pgName}
+            {pathInfo}
             {btnBack}
         </div>
     );

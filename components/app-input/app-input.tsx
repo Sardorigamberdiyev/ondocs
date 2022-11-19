@@ -1,5 +1,6 @@
 import { FC, useState } from 'react';
 import { IAppInputProps } from './app-input.props';
+import { PatternFormat, NumericFormat } from 'react-number-format';
 import styles from './app-input.module.sass';
 
 const AppInput: FC<IAppInputProps> = (props) => {
@@ -8,6 +9,7 @@ const AppInput: FC<IAppInputProps> = (props) => {
     const {
         id,
         type,
+        format,
         name,
         value,
         placeholder,
@@ -16,6 +18,7 @@ const AppInput: FC<IAppInputProps> = (props) => {
         className,
         iconUrl,
         disableTD,
+        disabled,
         onMouseDownIcon,
         onMouseUpIcon,
         onChange
@@ -36,17 +39,33 @@ const AppInput: FC<IAppInputProps> = (props) => {
 
     return (
         <div className={`${className || ''} ${styles.appInput} ${isFouceInput} ${isDisableTD}`}>
-            <input 
-            type={type}
-            id={id}
-            name={name}
-            value={value}
-            placeholder={placeholder}
-            style={!iconUrl ? {width: '100%'} : {}}
-            className={`${classNameInput || ''} ${isDisableTD}`}
-            onChange={onChange}
-            onFocus={() => setInputFoucus(true)}
-            onBlur={() => setInputFoucus(false)} />
+            {format ? (
+                <PatternFormat 
+                id={id}
+                format={format}
+                name={name}
+                value={value}
+                disabled={disabled}
+                placeholder={placeholder}
+                style={!iconUrl ? {width: '100%'} : {}}
+                className={`${classNameInput || ''} ${isDisableTD}`}
+                onChange={onChange}
+                onFocus={() => setInputFoucus(true)}
+                onBlur={() => setInputFoucus(false)} />
+            ) : (
+                <input 
+                type={type}
+                id={id}
+                name={name}
+                value={value}
+                disabled={disabled}
+                placeholder={placeholder}
+                style={!iconUrl ? {width: '100%'} : {}}
+                className={`${classNameInput || ''} ${isDisableTD}`}
+                onChange={onChange}
+                onFocus={() => setInputFoucus(true)}
+                onBlur={() => setInputFoucus(false)} />
+            )}
             {icon}
         </div>
     )

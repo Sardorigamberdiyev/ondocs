@@ -48,9 +48,27 @@
         margin-bottom: 1rem
         @extend %flexCenterBetween
 
+    &__pathInfo
+        display: flex
+        align-items: center
+        font-size: 12px
+
+        &__prePath
+            color: $mediumGray
+
+        &__currentPath
+            color: $blue
+
     main
         padding: 32px
         background-color: $lightBlue
+
+    &__rightArrowIcon
+        @extend %rightArrowIcon
+        width: 10px
+        height: 10px
+        background-color: $mediumGray
+        margin: 0 .5rem
 
 /* --------------- LayoutSetting ----------------- */
 .layoutSetting

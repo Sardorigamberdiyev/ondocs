@@ -1,11 +1,11 @@
 import { FC, useState, PropsWithChildren, useEffect } from 'react';
-import { ILayoutTableProps } from './layout.interfaces';
+import { ILayoutTableRowProps } from './layout.interfaces';
 import { ndsPercentsData, unitsData } from '../../common/data.variables';
 import { Option } from '../app-select/app-select';
 import AppSelect from '../app-select';
 import AppTableRow from '../app-table-row';
 
-const LayoutTableRow: FC<PropsWithChildren<ILayoutTableProps>> = (props) => {
+const LayoutTableRow: FC<PropsWithChildren<ILayoutTableRowProps>> = (props) => {
     const { children, index, className, getLayoutRowData } = props;
 
     const [unit, setUnit] = useState<Option | null>(null);

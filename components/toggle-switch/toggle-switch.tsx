@@ -29,7 +29,7 @@ const ToggleSwitch: FC<IToggleSwitchProps> = (props) => {
 
     return (
         <div className={classNames}
-        style={textRowReverse ? {flexDirection: 'row-reverse'} : {}}>
+        style={textRowReverse ? {flexDirection: 'row-reverse', justifyContent: 'flex-end'} : {}}>
             {toggleSwitchText}
             <label className={classNamesContent}>
                 <input type="checkbox"

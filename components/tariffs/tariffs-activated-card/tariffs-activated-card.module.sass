@@ -1,0 +1,35 @@
+@import ../../../styles/common.extend
+@import ../../../styles/common.colors
+
+.tariffsActivatedCard
+    width: 445px
+    padding: 1.75rem 2.5rem
+    display: flex
+    align-items: center
+    flex-direction: column
+
+    &__iconWrapper
+        margin-bottom: 1.75rem
+
+    &__statusText
+        margin-bottom: 1rem
+        font-size: 22px
+        font-weight: 500
+        color: $black
+
+    &__infoRow
+        margin-bottom: 1.5rem
+        width: 100%
+        display: flex
+        align-items: center
+        justify-content: space-between
+
+    &__btn
+        width: 100%
+        font-size: 16px
+
+    &__acceptIcon
+        @extend %acceptIcon
+        width: 40px
+        height: 40px
+        background-color: $lightGreen

@@ -2,9 +2,9 @@ import { FC, PropsWithChildren } from 'react';
 import { useRouter } from 'next/router';
 import { ILayoutSettingProps } from './layout.interfaces';
 import LayoutMain from './layout.main';
-import styles from './layout.module.sass';
 import AppBtn from '../app-btn';
 import AppCard from '../app-card';
+import styles from './layout.module.sass';
 
 const LayoutSetting: FC<PropsWithChildren<ILayoutSettingProps>> = (props) => {
     const { children, currentPage, btnsDisable, onCancel, onSave } = props;
@@ -18,7 +18,6 @@ const LayoutSetting: FC<PropsWithChildren<ILayoutSettingProps>> = (props) => {
     const infoActive = 'info' === currentPage ? activeClassName : '';
     const docsFormatActive = 'docs-format' === currentPage ? activeClassName : '';
     const codesActive = 'codes' === currentPage ? activeClassName : '';
-    const securityActive = 'security' === currentPage ? activeClassName : '';
 
     return (
         <LayoutMain pageName="Настройки">
@@ -43,10 +42,6 @@ const LayoutSetting: FC<PropsWithChildren<ILayoutSettingProps>> = (props) => {
                     <li className={`${styles.layoutSetting__navList__item} ${docsFormatActive}`} 
                     onClick={() => push('docs-format/')}>
                         Формат документов
-                    </li>
-                    <li className={`${styles.layoutSetting__navList__item} ${securityActive}`} 
-                    onClick={() => push('security/')}>
-                        Безопасность
                     </li>
                 </ul>
             </div>

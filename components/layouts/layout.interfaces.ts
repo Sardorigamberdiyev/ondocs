@@ -3,22 +3,15 @@ export interface ILayoutMainProps {
     pageName?: string;
     btnBackPageText?: string;
     btnBackPageLink?: string;
+    prePathText?: string;
+    currentPathText?: string;
+    isUrlInfo?: boolean;
 }
 
 // ------------------------ ILayoutLoginProps
 export interface ILayoutLoginProps {
     contentText?: string;
     contentTextMB?: string;
-}
-
-// ------------------------ ILayoutListProps
-export interface ILayoutListProps {
-    arrayData: any[] | null;
-    loading: boolean;
-    error: boolean;
-    customErrorIndicator?: JSX.Element | undefined;
-    customSpinner?: JSX.Element | undefined;
-    customEmpty?: JSX.Element | undefined;
 }
 
 // ------------------------ ILayoutTableProps
@@ -53,7 +46,7 @@ export interface ILayoutTableRowProps {
 
 // -------------------------- ILayoutSettingProps
 export interface ILayoutSettingProps {
-    currentPage: 'profile' | 'notification' | 'codes' | 'info' | 'docs-format' | 'security';
+    currentPage: 'profile' | 'notification' | 'codes' | 'info' | 'docs-format';
     btnsDisable?: boolean;
     onSave?: () => void;
     onCancel?: () => void;

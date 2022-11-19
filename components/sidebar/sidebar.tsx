@@ -1,8 +1,8 @@
 import { FC } from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
-import styles from './sidebar.module.sass';
 import AppBtn from '../app-btn';
+import styles from './sidebar.module.sass';
 
 const Sidebar: FC = () => {
     const router = useRouter();
@@ -36,7 +36,7 @@ const Sidebar: FC = () => {
                         </ul>
                     </div>
                     <ul className={styles.sidebar__mainList}>
-                        <li>
+                        <li onClick={() => router.push('/')}>
                             <i className={styles.sidebar__homeIcon} />
                             <span>Главная</span>
                         </li>
@@ -56,11 +56,13 @@ const Sidebar: FC = () => {
                             <i className={styles.sidebar__trashIcon} />
                             <span>Архив (0)</span>
                         </li>
-                        <li>
+                        <li
+                        onClick={() => router.push('/news')}>
                             <i className={styles.sidebar__newsIcon} />
                             <span>Новости</span>
                         </li>
-                        <li>
+                        <li
+                        onClick={() => router.push('/setting/profile')}>
                             <i className={styles.sidebar__settingIcon} />
                             <span>Настройка</span>
                         </li>

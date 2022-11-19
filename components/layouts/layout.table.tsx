@@ -11,12 +11,12 @@ const LayoutTable: FC<PropsWithChildren<ILayoutTableProps>> = (props) => {
         removeBtnText,
         className,
         classNameBtn,
+        children,
         onRemoveRow, 
         onAddRow, 
         onDownloadXlsx, 
         onDownloadSample, 
-        onDownloadUnit, 
-        children 
+        onDownloadUnit 
     } = props;
 
     return (

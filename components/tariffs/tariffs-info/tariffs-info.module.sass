@@ -1,0 +1,55 @@
+@import ../../../styles/common.colors
+@import ../../../styles/common.extend
+
+.tariffInfo
+    display: flex
+    align-items: center
+    margin-bottom: 1rem
+
+    &__column
+        margin-bottom: 0
+        flex-direction: column
+        align-items: flex-start
+
+        .tariffInfo__iconWrapper
+            margin-bottom: 4px
+
+    &__iconWrapper
+        width: 30px
+        height: 30px
+        margin-right: 12px
+        display: flex
+        align-items: center
+        justify-content: center
+        position: relative
+        border-radius: .5rem
+        overflow: hidden
+
+        i
+            @extend %iconStyle
+            width: 15px
+            height: 18px
+            background-color: $blue
+
+        &::before
+            content: ''
+            background-color: $blue
+            opacity: .1
+            position: absolute
+            top: 0
+            left: 0
+            width: 100%
+            height: 100%
+
+    &__textWrapper
+        display: flex
+        flex-direction: column
+
+        &__count
+            color: $black
+            font-weight: bold
+
+        &__price
+            color: $blue
+            font-size: 20px
+            font-weight: bold

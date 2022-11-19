@@ -1,5 +1,14 @@
 @import ./common.mixin
 
+%iconStyle
+    width: 20px
+    height: 20px
+    display: inline-block
+    background-color: white
+    mask-position: center center
+    mask-size: 100%
+    mask-repeat: no-repeat
+
 %addIcon
     @include icon('/icons/add.png')
 
@@ -17,6 +26,10 @@
 
 %rightArrowIcon
     @include icon('/icons/right-arrow.png')
+
+%leftArrowIcon
+    @include icon('/icons/right-arrow.png')
+    transform: rotate(180deg)
 
 %settingIcon
     @include icon('/icons/settings.png')
@@ -63,3 +76,12 @@
 
 %calendarIcon
     @include icon('/icons/calendar.png')
+
+%excelIcon
+    @include icon('/icons/excel.png')
+
+%docsIcon
+    @include icon('/icons/docs.png')
+
+%timeIcon
+    @include icon('/icons/time.png')

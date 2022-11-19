@@ -2,6 +2,7 @@ import { ChangeEventHandler, MouseEventHandler } from 'react';
 
 export interface IAppInputProps {
     type: 'text' | 'number' | 'password';
+    format?: string;
     id?: string;
     value?: string | number;
     placeholder?: string;
@@ -10,6 +11,7 @@ export interface IAppInputProps {
     classNameIcon?: string;
     className?: string;
     disableTD?: boolean;
+    disabled?: boolean;
     iconUrl?: string;
     onChange?: ChangeEventHandler<HTMLInputElement>;
     onMouseUpIcon?: MouseEventHandler<HTMLElement>;

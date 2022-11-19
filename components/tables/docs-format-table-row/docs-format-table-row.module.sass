@@ -1,0 +1,41 @@
+@import ../../../styles/common.colors
+@import ../../../styles/common.extend
+
+%cellStyle
+    color: $black
+    background-color: transparent
+    border-color: white
+    font-size: 14px
+    font-weight: 500
+    padding: 12px
+
+$tableBorderStyle: 1px solid $transparentBlack
+
+.docsFormatTableRow
+    td
+        @extend %cellStyle
+        border-bottom: $tableBorderStyle
+
+        &:nth-child(1)
+            @extend %cellStyle
+            border-left: $tableBorderStyle
+            border-bottom: $tableBorderStyle
+
+        &:nth-last-child(1)
+            border-right: $tableBorderStyle
+            padding-right: 1.5rem
+            display: flex
+            justify-content: flex-end
+
+    &__btn
+        color: $pink
+        font-size: 12px
+        background-color: transparent
+        padding: 0
+        display: flex
+        align-items: center
+
+    &__trashIcon
+        @extend %trashIcon
+        background-color: $pink
+        margin-right: 4px

@@ -1,0 +1,50 @@
+@import ../styles/common.extend
+@import ../styles/common.colors
+
+%iconStyle
+    width: 12px
+    height: 12px
+    background-color: $blue
+
+.home
+    &__card
+        margin-bottom: 2rem
+
+    &__tableWrapper
+        margin-bottom: 1rem
+
+        &__card
+            border-top-left-radius: 0
+
+    &__paginationLimit
+        display: flex
+        align-items: center
+        justify-content: space-between
+
+    &__infoCardList
+        margin-bottom: 1.5rem
+        display: flex
+        align-items: center
+        justify-content: space-between
+
+    &__swiper
+        position: relative
+
+        &__slideBtns
+            z-index: 999
+            position: absolute
+            right: 0
+            display: flex
+            align-items: center
+
+        &__nextBtn,
+        &__prevBtn
+            cursor: pointer
+
+    &__rightArrowIcon
+        @extend %rightArrowIcon
+        @extend %iconStyle
+
+    &__leftArrowIcon
+        @extend %leftArrowIcon
+        @extend %iconStyle

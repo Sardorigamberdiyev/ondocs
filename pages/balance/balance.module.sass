@@ -1,0 +1,52 @@
+@import ../../styles/common.colors
+
+%flexCenter
+    display: flex
+    align-items: center
+
+%flexCenterBetween
+    @extend %flexCenter
+    justify-content: space-between
+
+.balance
+    &__otherPayment
+        h2
+            color: $black
+            margin-top: 0
+            margin-bottom: .5rem
+            
+        &__bankBook
+            color: $black
+            font-weight: 500
+            margin-bottom: 1.25rem
+
+    &__paymentList
+        max-width: 352px
+        @extend %flexCenterBetween
+        flex-wrap: wrap
+
+        &__item
+            margin-bottom: 2rem
+            padding: 12px
+            width: 160px
+            height: 80px
+            border: 1px solid $lightGray
+            border-radius: .5rem
+            cursor: pointer
+            flex-direction: column
+            @extend %flexCenterBetween
+
+    &__paymentLogo
+        align-self: flex-end
+        @extend %flexCenter
+
+        span
+            font-weight: bold
+            font-size: 16px
+            color: #094E7F
+            padding-left: .25rem
+
+    &__paymentName
+        align-self: flex-start
+        font-size: 15px
+        font-weight: 500

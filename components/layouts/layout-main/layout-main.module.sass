@@ -1,0 +1,47 @@
+@import ../../../styles/common.colors
+@import ../../../styles/common.extend
+
+.layoutMain
+    display: flex
+
+    > h1
+        color: $black
+        margin: 0
+
+    &__wrapper
+        width: calc(100% - 256px)
+        position: absolute
+        top: 0
+        right: 0
+
+    &__pageHeader
+        margin-bottom: 1rem
+        @extend %flexCenterBetween
+
+    &__pathInfo
+        display: flex
+        align-items: center
+        font-size: 12px
+
+        &__prePath
+            color: $mediumGray
+
+        &__currentPath
+            color: $blue
+
+    main
+        transition-duration: .2s
+        padding: 2rem 2rem 12rem 2rem
+        height: 100%
+        background-color: $lightBlue
+
+    &__lowVision
+        main
+            background-color: #FFF8D4
+
+    &__rightArrowIcon
+        @extend %rightArrowIcon
+        width: 10px
+        height: 10px
+        background-color: $mediumGray
+        margin: 0 .5rem

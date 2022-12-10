@@ -2,21 +2,20 @@ import { useRef, useState } from 'react';
 import type { NextPage } from 'next';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { EffectFade, Navigation, Autoplay, Swiper as SwiperType } from 'swiper';
+import { useSelector } from 'react-redux';
 import 'swiper/css';
 import 'swiper/css/effect-fade';
 
 import { LayoutMain } from '../components/layouts';
-import { Colors } from '../common/color.variables';
-import { IDocsTableFilterProps } from '../components/tables/docs-table-filter/docs-table-filter.interfaces';
-import { newsList } from '../common/data.variables';
+import { Colors } from '../common/variables/color.variables';
+import { AppCard, AppPagination, AppLimitSelect } from '../components/app';
+import { DocsTable, DocsTableFilter } from '../components/pages/docs';
+import { IDocsTableFilterProps } from '../components/pages/docs/docs-table-filter/docs-table-filter.interfaces';
+import { NewsSlideItem } from '../components/pages/news';
+import { RootState } from '../store/store';
+import { newsList } from '../common/variables/data.variables';
 import InfoCard from '../components/info-card';
-import AppCard from '../components/app-card';
 import withAuthGuard from '../components/hoc/with-auth.guard';
-import NewsSlideItem from '../components/news/news-slide-item';
-import DocsTable from '../components/tables/docs-table';
-import AppPagination from '../components/app-pagination';
-import AppLimitSelect from '../components/app-limit-select';
-import DocsTableFilter from '../components/tables/docs-table-filter';
 import styles from './index.module.sass';
 
 const Home: NextPage = () => {
@@ -24,11 +23,14 @@ const Home: NextPage = () => {
   const [filterActive, setFilterActive] = useState<IDocsTableFilterProps['filterActive']>('filter-one');
   const prevSlideBtn = useRef(null);
   const nextSlideBtn = useRef(null);
+  const isLowVision = useSelector((state: RootState) => state.lowVision.isActive);
 
   const swipperNavigation = {
     nextEl: nextSlideBtn.current,
     prevEl: prevSlideBtn.current
-  }
+  };
+
+  const lowVisionClassName = isLowVision ? ' lowVision' : '';
 
   return (
     <LayoutMain
@@ -43,7 +45,7 @@ const Home: NextPage = () => {
           go="" />
           <InfoCard 
           iconUrl="/icons/clock.png"
-          iconColor={Colors.yellow}
+          iconColor={Colors.orange}
           text="В ожидании"
           count={5}
           go="" />
@@ -61,7 +63,7 @@ const Home: NextPage = () => {
           go="" />
         </div>
       </div>
-      <AppCard className={styles.home__card}>
+      <AppCard className={styles.home__card + lowVisionClassName}>
         <div className={styles.home__swiper}>
           <div className={styles.home__swiper__slideBtns}>
             <div className={styles.home__swiper__prevBtn}
@@ -105,7 +107,7 @@ const Home: NextPage = () => {
         filterFourClick={() => setFilterActive('filter-four')}
         filterFiveClick={() => setFilterActive('filter-five')} />
         <AppCard className={styles.home__tableWrapper__card}>
-          <DocsTable />
+          <DocsTable tableData={['asdf123', 'aaw22', '123qwe']} />
         </AppCard>
       </div>
       <div className={styles.home__paginationLimit}>

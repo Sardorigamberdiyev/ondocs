@@ -1,15 +1,11 @@
 import { FC } from 'react';
 import { ITableData } from '../../../components/tables/akt-revise-table/akt-revise-table.interfaces';
+import { AppCard, AppLabel, AppDate, AppInput, AppTextarea } from '../../../components/app';
 import { LayoutDocumentCreation, LayoutMain } from '../../../components/layouts';
 import { aktRevisePlaceholder } from '../../../common/text.variables';
-import AppCard from '../../../components/app-card';
 import styles from './akt-revise.module.sass';
 import RowForm from '../../../components/forms/row-form';
-import AppLabel from '../../../components/app-label';
-import AppDate from '../../../components/app-date';
 import FormWrapper from '../../../components/form-wrapper';
-import AppInput from '../../../components/app-input';
-import AppTextarea from '../../../components/app-textarea';
 import AktReviseOrganizationForm from '../../../components/forms/akt-revise-organization-form';
 import AktReviseTableList from '../../../components/tables/akt-revise-table-list';
 

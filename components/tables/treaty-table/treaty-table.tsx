@@ -1,12 +1,9 @@
 import { FC, useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { LayoutTable } from '../../layouts';
-import AppTableRow from '../../app-table-row';
-import styles from './treaty-table.module.sass';
+import { AppTableBody, AppTableRow, AppTableFoot, AppTableHead } from '../../app';
 import TreatyTableRow from '../treaty-table-row';
-import AppTableFoot from '../../app-table-foot';
-import AppTableBody from '../../app-table-body';
-import AppTableHead from '../../app-table-head';
+import styles from './treaty-table.module.sass';
 
 const TreatyTable: FC = () => {
     const [tableRows, setTableRows] = useState([uuidv4()]);

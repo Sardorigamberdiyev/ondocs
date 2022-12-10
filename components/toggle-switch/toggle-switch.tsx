@@ -1,5 +1,5 @@
 import { FC, useState } from 'react';
-import { IToggleSwitchProps } from './toggle-switch.props';
+import { IToggleSwitchProps } from './toggle-switch.interfaces';
 import styles from './toggle-switch.module.sass';
 
 const ToggleSwitch: FC<IToggleSwitchProps> = (props) => {

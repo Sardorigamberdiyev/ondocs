@@ -1,7 +1,7 @@
 import { FC, useState, useEffect } from 'react';
 import { LayoutTableRow } from '../../layouts';
-import AppSelect from '../../app-select';
-import { Option } from '../../app-select/app-select';
+import { AppSelect } from '../../app';
+import { Option } from '../../app/app-select/app-select';
 
 interface ITreatyTableRowProps {
     index: number;

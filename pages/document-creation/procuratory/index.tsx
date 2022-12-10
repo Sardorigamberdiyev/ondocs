@@ -1,15 +1,13 @@
 import { FC } from 'react';
 import { LayoutMain, LayoutDocumentCreation } from '../../../components/layouts';
-import AppCard from '../../../components/app-card';
-import AppInput from '../../../components/app-input';
-import AppLabel from '../../../components/app-label';
+import { AppCard, AppInput, AppLabel } from '../../../components/app';
 import RowForm from '../../../components/forms/row-form';
 import FormWrapper from '../../../components/form-wrapper';
-import styles from './procuratory.module.sass';
 import ProcuratoryCompanyForm from '../../../components/forms/procuratory-company-form';
 import ProcuratoryConfidantForm from '../../../components/forms/procuratory-confidant-form';
 import ProcuratoryTopForm from '../../../components/forms/procuratory-top-form/procuratory-top-form';
 import ProcuratoryTable from '../../../components/tables/procuratory-table';
+import styles from './procuratory.module.sass';
 
 const Procuratory: FC = () => {
     return (

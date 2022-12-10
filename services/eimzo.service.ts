@@ -31,6 +31,10 @@ export class EimzoService {
         return this._stirs;
     }
 
+    public async createPkcs7(keyId: string, guid: string, timestamp: Date, ) {
+
+    }
+
     public async getlistAllUserKeys(
             success: (items: IStirWithId[], firstId: any) => void,
             fail: (error: Error, r?: any) => void

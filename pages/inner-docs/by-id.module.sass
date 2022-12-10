@@ -1,0 +1,131 @@
+@import ../../styles/common.colors
+@import ../../styles/common.extend
+
+.innerDocsById
+
+    &__row
+        margin-bottom: 1.5rem
+        display: flex
+        justify-content: space-between
+
+    &__sheetInfoContent
+        min-width: 1088px
+
+    &__sheetInfo
+        overflow-x: scroll
+        margin-bottom: 1rem
+        padding: 0
+
+        &__topRow
+            display: flex
+            align-items: center
+            justify-content: space-between
+
+            &__docsType
+                margin-bottom: 1rem
+                padding: .5rem
+                font-size: 12px
+                font-weight: bold
+                text-align: center
+                color: $black
+                border: 1px solid $darkGray
+
+            &__docsId
+                font-size: 12px
+                color: $mediumGray
+
+        &__heading
+            margin-bottom: 2rem
+            display: flex
+            align-items: center
+            justify-content: center
+
+            &__wrapper
+                max-width: 320px
+                text-align: center
+
+            &__docsName
+                color: $black
+                font-weight: bold
+                font-size: 14px
+                text-transform: uppercase
+
+            &__docsNumber
+                font-size: 12px
+                color: $black
+
+            &__docsOffer
+                font-size: 12px
+                color: $black
+
+        &__personRow
+            margin-bottom: 1rem
+            display: flex
+            justify-content: space-between
+
+            ul
+                width: 49%
+                padding: 0
+                margin: 0
+                list-style-type: none
+
+                li
+                    display: flex
+                    padding: 5px 0
+                    font-size: 12px
+                    color: $black
+
+                    &:nth-child(1)
+                        span
+                            text-transform: uppercase
+
+                    strong
+                        width: 55%
+                        text-align: right
+
+                    span
+                        width: 45%
+                        padding-left: .5rem
+
+        &__tableWrapper
+            padding-bottom: 3.5rem
+
+        &__footer
+
+            &__signatures
+                display: flex
+                justify-content: space-around
+
+                &__item
+                    margin-bottom: 1rem
+                    width: 100%
+                    display: flex
+                    font-size: 12px
+
+                    strong
+                        min-width: 120px
+
+                    div
+                        display: flex
+                        flex-direction: column
+                        padding: 0 .5rem
+
+                        &:nth-last-child(1)
+                            width: 165px
+
+                        &:nth-last-child(2)
+                            width: 240px
+                            
+
+                        span
+                            text-align: center
+
+                            &:nth-child(1)
+                                padding-bottom: .5rem
+                                color: $black
+
+                            &:nth-last-child(1)
+                                border-top: 1px solid $darkGray
+                                color: $black
+
+

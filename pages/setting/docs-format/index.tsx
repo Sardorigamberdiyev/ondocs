@@ -1,12 +1,7 @@
 import { FC } from 'react';
 import { LayoutSetting } from '../../../components/layouts';
-import AppLabel from '../../../components/app-label';
-import AppSelect from '../../../components/app-select';
-import AppTable from '../../../components/app-table';
-import AppTableBody from '../../../components/app-table-body';
-import AppTableHead from '../../../components/app-table-head';
-import AppTableRow from '../../../components/app-table-row';
-import DocsFormatTableRow from '../../../components/tables/docs-format-table-row';
+import { AppLabel, AppSelect, AppTable, AppTableBody, AppTableHead, AppTableRow } from '../../../components/app';
+import DocsFormatTableRow from '../../../components/pages/docs/docs-format-table-row';
 import styles from './docs-format.module.sass';
 
 const DocsFormat: FC = () => {

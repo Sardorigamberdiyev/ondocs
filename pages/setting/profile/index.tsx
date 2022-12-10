@@ -1,11 +1,10 @@
 import { FC, useState } from 'react';
 import { LayoutSetting } from '../../../components/layouts';
-import AppInput from '../../../components/app-input';
-import AppLabel from '../../../components/app-label';
+import { AppInput, AppLabel } from '../../../components/app';
 import FormWrapper from '../../../components/form-wrapper';
 import RowForm from '../../../components/forms/row-form';
-import styles from './profile.module.sass';
 import ToggleSwitch from '../../../components/toggle-switch';
+import styles from './profile.module.sass';
 
 const Profile: FC = () => {
     const [isShowPassword, setIsShowPassword] = useState(false);
@@ -24,8 +23,11 @@ const Profile: FC = () => {
                         placeholder="test@gmail.com" />
                     </AppLabel>
                     <AppLabel text="Номер телефона">
-                        <AppInput type="number"
-                        placeholder="+998907777777" />
+                        <AppInput 
+                        type="number"
+                        mask="_"
+                        format="+998(##)###-##-##"
+                        placeholder="+998(90)777-77-77" />
                     </AppLabel>
                     <div className={styles.profile__switches}>
                         <ToggleSwitch className={styles.profile__switches__item}

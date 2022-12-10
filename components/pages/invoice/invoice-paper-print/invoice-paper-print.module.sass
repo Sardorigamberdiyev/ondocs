@@ -1,0 +1,114 @@
+@import ../../../../styles/common.colors
+@import ../../../../styles/common.extend
+
+.invoicePaperPrint
+    padding: 1.5rem
+    background-color: white
+    position: relative
+
+    &__excise
+        display: flex
+        flex-direction: column
+
+    &__closeBtn
+        padding: .5rem
+        background-color: white
+        border: 1px solid $lightGray
+        color: $mediumGray
+        position: fixed
+        top: 1rem
+        right: 2rem
+
+    &__header
+        &__name
+            text-align: center
+            margin-top: 0
+            color: $black
+
+        &__signTitle
+            padding-bottom: 3rem
+            font-size: 28px
+            font-weight: bold
+            color: $black
+
+        &__signRow
+            @extend %flexCenterBetween
+            margin-bottom: 3.25rem
+
+        &__sign
+            position: relative
+
+            &__bgNumber
+                font-size: 200px
+                font-weight: bold
+                line-height: 1
+                color: $pink
+                opacity: .5
+                position: absolute
+                top: -35px
+                left: 0
+
+            ul
+                padding: 1rem 0
+                margin: 0
+                list-style-type: none
+
+                li
+                    font-weight: 500
+                    color: $black
+                    padding: 2px 0
+
+                    &:last-child
+                        color: $blue
+
+        &__docsId
+            width: 50%
+            color: $darkGray
+            font-weight: 500
+
+            &__value
+                padding-bottom: 4px
+
+            &__description
+                padding-top: 4px
+                border-top: 1px solid black
+
+        &__docsType
+            display: flex
+            padding: 2rem 0
+            
+            &__wrapper
+                width: 160px
+                padding: 12px
+                text-align: center
+                border: 1px solid $lightGray
+                color: $mediumGray
+
+
+    &__main
+
+        &__docsTitle
+            width: 50%
+            margin: 0 auto
+            padding-bottom: 2.5rem
+            text-align: center
+            font-size: 28px
+            font-weight: bold
+            color: $black
+            
+        &__docsDataRow
+            padding-bottom: 2rem
+            display: flex
+            justify-content: space-between
+
+        &__totalPrice
+            font-size: 20px
+            font-weight: bold
+            color: $black
+
+    &__footer
+        padding-top: 4.5rem
+
+        &__row
+            display: flex
+            justify-content: space-between

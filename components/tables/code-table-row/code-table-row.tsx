@@ -1,7 +1,6 @@
 import { FC } from 'react';
+import { AppTableRow, AppBtn } from '../../app';
 import { ICodeTableRowProps } from './code-table-row.interfaces';
-import AppTableRow from '../../app-table-row';
-import AppBtn from '../../app-btn';
 import styles from './code-table-row.module.sass';
 
 const CodeTableRow: FC<ICodeTableRowProps> = ({code, index, onDeleteCode}) => {

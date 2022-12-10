@@ -1,28 +1,37 @@
 import { FC, useState, useEffect } from 'react';
+import { useRouter } from 'next/router';
 import Link from 'next/link';
 
 import { EimzoService, IStirWithId } from '../../services/eimzo.service';
 import { LayoutLogin } from '../../components/layouts';
+import { AppBtn, AppList } from '../../components/app';
 import { StirWarn, StirList, StirEmpty } from '../../components/stir';
-import { useRouter } from 'next/router';
-import AppBtn from '../../components/app-btn';
-import styles from './login.module.sass';
+import { api } from '../../services/api';
 import Cookies from 'js-cookie';
-import AppList from '../../components/app-list';
+import styles from './login.module.sass';
 
 const Login: FC = () => {
+    const [guid, setGuid] = useState('');
     const [stirs, setStirs] = useState<IStirWithId[] | null>(null);
     const [stirId, setStirId] = useState<null | string>(null);
     const [error, setError] = useState<boolean>(false);
     const [loading, setLoading] = useState<boolean>(true);
     const router = useRouter();
 
+
     useEffect(() => {
-        EIMZOClient.checkVersion((arg1: any, arg2: any) => {
+        api.get<{guid: string}>('/accounts/guid')
+            .then((res) => setGuid(res.data.guid))
+            .catch((err) => console.log(err));
+    }, [])
+
+    useEffect(() => {
+        EIMZOClient.checkVersion(async (arg1: any, arg2: any) => {
             console.log('checkVersion');
             console.log('------- success ------');
             console.log('arg1', arg1);
             console.log('arg2', arg2);
+            
         }, (arg1: any, arg2: any) => {
             console.log('checkVersion');
             console.log('------- fail ------');
@@ -32,6 +41,7 @@ const Login: FC = () => {
 
         const eimzoService = new EimzoService(EIMZOClient);
         eimzoService.getlistAllUserKeys((items: IStirWithId[]) => {
+            console.log(items);
             setStirs(items);
             setLoading(false);
             setError(false);
@@ -44,10 +54,25 @@ const Login: FC = () => {
     const signIn = () => {
         const stir = stirs?.find((s) => s.id === stirId);
 
-        EIMZOClient.loadKey(stir, (arg1: any) => {
+        EIMZOClient.loadKey(stir, async (keyId: string) => {
             console.log('------ success ----');
-            console.log('arg1', arg1);
-            Cookies.set('token', arg1);
+            console.log('keyId', keyId);
+
+            EIMZOClient.createPkcs7(keyId, guid, null, 
+            (pkcs7: string) => {
+                console.log('-------------- createPkcs7 ----------------');
+                console.log('-------------- success -------------------');
+                console.log('pkcs7', pkcs7);
+                api.post('/accounts/pkcs7', {pkcs7})
+                    .then((res) => console.log(res))
+                    .catch((err) => console.log(err));
+            }, (arg1: any, arg2: any) => {
+                console.log('-------------- createPkcs7 ----------------');
+                console.log('-------------- fail -------------------');
+                console.log('arg1', arg1);
+                console.log('arg2', arg2);
+            });
+            Cookies.set('token', keyId);
             router.push('/');
         }, (arg1: any, arg2: any) => {
             console.log('------ fail ------');

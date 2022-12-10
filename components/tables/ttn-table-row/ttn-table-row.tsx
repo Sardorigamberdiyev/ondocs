@@ -1,7 +1,6 @@
 import { FC } from 'react';
 import { unitsData } from '../../../common/data.variables';
-import AppSelect from '../../app-select';
-import AppTableRow from '../../app-table-row';
+import { AppSelect, AppTableRow } from '../../app';
 
 interface ITtnTableRowProps {
     index: number;

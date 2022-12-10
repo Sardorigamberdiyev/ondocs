@@ -1,0 +1,47 @@
+@import ../../../styles/common.colors
+@import ../../../styles/common.extend
+
+%invoiceIconStyle
+    margin-right: .5rem
+    width: 16px
+    height: 16px
+
+.layoutDocumentCreation
+    &__lowerBtns
+        @extend %flexCenterBetween
+
+    &__wrapperBtns
+        display: flex
+        align-items: center
+
+    &__btnCancel, 
+    &__btnViewDoc, 
+    &__btnSave, 
+    &__btnSign
+        display: flex
+        align-items: center
+
+    &__btnCancel, &__btnSave
+        margin-right: 1rem
+
+    &__btnCancel
+        background-color: $pink!important // только для создание страниц и не изменяемый стиль по этому important
+
+    &__btnSign
+        background-color: $lightGreen!important // только для создание страниц и не изменяемый стиль по этому important
+
+    &__cancelIcon
+        @extend %cancelIcon
+        @extend %invoiceIconStyle
+
+    &__acceptIcon
+        @extend %acceptIcon
+        @extend %invoiceIconStyle
+            
+    &__diskIcon
+        @extend %diskIcon
+        @extend %invoiceIconStyle
+
+    &__seenIcon
+        @extend %seenIcon
+        @extend %invoiceIconStyle

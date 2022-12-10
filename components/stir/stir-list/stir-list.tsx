@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { IStirWithId } from '../../../services/eimzo.service';
-import StirListItem from '../stir-list-item';
 import { IStirListItemProps } from '../stir-list-item/stir-list-item';
+import StirListItem from '../stir-list-item';
 import styles from './stir-list.module.sass';
 
 interface IStirListProps {

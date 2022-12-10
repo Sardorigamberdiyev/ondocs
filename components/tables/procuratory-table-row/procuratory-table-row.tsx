@@ -1,7 +1,6 @@
 import { FC, useEffect, useState } from 'react';
-import { Option } from '../../app-select/app-select';
-import AppTableRow from '../../app-table-row';
-import AppSelect from '../../app-select';
+import { AppTableRow, AppSelect } from '../../app';
+import { Option } from '../../app/app-select/app-select';
 import styles from './procuratory-table-row.module.sass';
 
 interface IProcuratoryTableRowProps {

@@ -1,0 +1,22 @@
+@import ../../../../../styles/common.colors
+
+%flexCenterBetween
+    display: flex
+    align-items: center
+    justify-content: space-between
+
+.invoiceProcuratoryForm
+
+    &__header
+        margin-bottom: 2rem
+        @extend %flexCenterBetween
+
+    &__select
+        width: 65%
+
+    &__rowInputs
+        @extend %flexCenterBetween
+
+    &__info
+        font-size: 14px
+        color: $mediumGray

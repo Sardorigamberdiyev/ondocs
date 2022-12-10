@@ -1,0 +1,67 @@
+@import ../../../../styles/common.colors
+@import ../../../../styles/common.extend
+
+.docsActions
+    margin-bottom: 1.5rem
+    display: flex
+    justify-content: space-between    
+
+    &__right,
+    &__left
+        display: flex
+
+    &__acceptBtn,
+    &__cancelBtn
+        display: flex
+        align-items: center
+        font-size: 16px
+        line-height: 1
+
+    &__acceptBtn
+        margin-right: 1rem
+
+    &__cancelBtn
+        background-color: $pink
+
+    &__limitSelect
+        margin-right: 1rem
+
+    &__syncXlsx
+        display: flex
+        height: 100%
+        border-radius: .5rem
+        border: .5px solid $lightGray
+        overflow: hidden
+
+        &__btn
+            display: flex
+            align-items: center
+            color: $black
+            font-size: 16px
+            background-color: white
+            border-radius: 0
+
+            &:nth-child(1)
+                box-shadow: inset -1px 0px 0px $transparentBlack
+
+    &__acceptIcon
+        @extend %acceptIcon
+        margin-right: .5rem
+        width: 16px
+        height: 16px
+
+    &__cancelIcon
+        @extend %cancelIcon
+        margin-right: .5rem
+        width: 16px
+        height: 16px
+
+    &__downloadCircleIcon
+        @extend %downloadCircleIcon
+        background-color: $blue
+        margin-right: .5rem
+
+    &__refreshIcon
+        @extend %refreshIcon
+        background-color: $blue
+        margin-right: .5rem

@@ -1,11 +1,16 @@
 import { FC } from 'react';
+import { useSelector } from 'react-redux';
 import { useRouter } from 'next/router';
+import { AppBtn } from '../app';
 import Link from 'next/link';
-import AppBtn from '../app-btn';
 import styles from './sidebar.module.sass';
+import { RootState } from '../../store/store';
 
 const Sidebar: FC = () => {
     const router = useRouter();
+
+    const isLowVision = useSelector((state: RootState) => state.lowVision.isActive);
+    const lowVisionClassName = isLowVision ? ' lowVision' : '';
 
     return (
         <div className={styles.sidebar}>
@@ -26,7 +31,7 @@ const Sidebar: FC = () => {
                             </div>
                             <i className={styles.sidebar__rightArrowIcon} />
                         </div>
-                        <ul className={styles.sidebar__addMenu__dropDownList}>
+                        <ul className={styles.sidebar__addMenu__dropDownList + lowVisionClassName}>
                             <li onClick={() => router.push('/document-creation/treaty')}>Договор</li>
                             <li onClick={() => router.push('/document-creation/procuratory')}>Доверенность</li>
                             <li onClick={() => router.push('/document-creation/invoice')}>Счет-фактура</li>
@@ -40,19 +45,19 @@ const Sidebar: FC = () => {
                             <i className={styles.sidebar__homeIcon} />
                             <span>Главная</span>
                         </li>
-                        <li>
+                        <li onClick={() => router.push('/ascending')}>
                             <i className={styles.sidebar__downArrowIcon} />
                             <span>Входящие (2)</span>
                         </li>
-                        <li>
+                        <li onClick={() => router.push('/incoming')}>
                             <i className={styles.sidebar__topArrowIcon} />
                             <span>Исходящие (3)</span>
                         </li>
-                        <li>
+                        <li onClick={() => router.push('/saved')}>
                             <i className={styles.sidebar__diskIcon} />
                             <span>Сохраненные (0)</span>
                         </li>
-                        <li>
+                        <li onClick={() => router.push('/archive')}>
                             <i className={styles.sidebar__trashIcon} />
                             <span>Архив (0)</span>
                         </li>

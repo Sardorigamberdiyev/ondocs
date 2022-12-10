@@ -1,8 +1,8 @@
 import { FC } from 'react';
 import { useRouter } from 'next/router';
 import { LayoutMain } from '../../../components/layouts';
-import AppCard from '../../../components/app-card';
-import NewsDate from '../../../components/news/news-date';
+import { AppCard } from '../../../components/app';
+import { NewsDate } from '../../../components/pages/news';
 import styles from './by-id.module.sass';
 
 const NewsById: FC = () => {

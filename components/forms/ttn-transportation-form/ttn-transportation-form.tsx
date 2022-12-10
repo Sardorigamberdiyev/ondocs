@@ -1,8 +1,6 @@
 import { FC, useState, useEffect } from 'react';
+import { AppDate, AppInput, AppLabel } from '../../app';
 import { ITtnTransportationData } from './ttn-transportation-data.interface';
-import AppDate from '../../app-date';
-import AppInput from '../../app-input';
-import AppLabel from '../../app-label';
 import ToggleSwitch from '../../toggle-switch';
 import RowForm from '../row-form';
 import styles from './ttn-transportation-form.module.sass';

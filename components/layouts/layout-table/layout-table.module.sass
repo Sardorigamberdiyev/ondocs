@@ -1,0 +1,62 @@
+@import ../../../styles/common.colors
+@import ../../../styles/common.extend
+
+.layoutTable
+    table
+        width: 100%
+        margin-bottom: 1.5rem
+        border-collapse: collapse
+
+    &__footer
+        @extend %flexCenterBetween
+
+    &__btnsWrapper
+        @extend %flexCenterBetween
+
+    &__total
+        font-size: 18px
+        font-weight: 500
+        color: $darkGray
+
+    &__downloads
+        margin-bottom: 1.5rem
+        display: flex
+
+        &__item
+            display: flex
+            align-items: center
+            color: $black
+            font-size: 12px
+            font-weight: 400
+            margin-right: 28px
+            cursor: pointer
+
+            &:nth-last-child(1)
+                margin-right: 0
+
+    &__btn
+        padding: 0!important // только для таблиц и неизменяемый стиль по этому important
+        display: flex
+        align-items: center
+        background-color: transparent!important // только для таблиц и неизменяемый стиль по этому important
+        color: $blue!important // только для таблиц и неизменяемый стиль по этому important
+
+        &:nth-last-child(1)
+            margin-left: 2rem
+
+    &__trashIcon
+        @extend %trashIcon
+        background-color: $blue
+        margin-right: .5rem
+
+    &__addIcon
+        @extend %addIcon
+        background-color: $blue
+        margin-right: .5rem
+
+    &__downloadIcon
+        @extend %downloadIcon
+        width: 14px
+        height: 14px
+        margin-right: .5rem
+        background-color: $darkGray

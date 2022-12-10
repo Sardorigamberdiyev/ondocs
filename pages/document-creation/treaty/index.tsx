@@ -1,14 +1,14 @@
 import { Dispatch, FC, SetStateAction, useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
+import { AppCard } from '../../../components/app';
 import { LayoutDocumentCreation, LayoutMain } from '../../../components/layouts';
-import AppCard from '../../../components/app-card';
-import styles from './treaty.module.sass';
 import RowForm from '../../../components/forms/row-form';
 import FormWrapper from '../../../components/form-wrapper';
 import TreatyTopForm from '../../../components/forms/treaty-top-form';
 import TreatyInformationForm from '../../../components/forms/treaty-information-form';
 import TreatyTable from '../../../components/tables/treaty-table';
 import TreatyContentForm from '../../../components/forms/treaty-content-form';
+import styles from './treaty.module.sass';
 
 const Treaty: FC = () => {
     const [informationForms, setInformationForms] = useState([uuidv4()]);

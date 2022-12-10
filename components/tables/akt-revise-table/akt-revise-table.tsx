@@ -1,15 +1,9 @@
 import { Dispatch, FC, SetStateAction, useEffect, useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
+import { AppDate, AppTableHead, AppTableRow, AppTable, AppTableBody, AppBtn, AppTableFoot } from '../../app';
 import { IBalance, ITableData } from './akt-revise-table.interfaces';
-import AppDate from '../../app-date';
-import AppTableHead from '../../app-table-head';
-import AppTableRow from '../../app-table-row';
-import AppTable from '../../app-table';
-import AppTableBody from '../../app-table-body';
-import styles from './akt-revise-table.module.sass';
 import AktReviseTableRow from '../akt-revise-table-row';
-import AppTableFoot from '../../app-table-foot';
-import AppBtn from '../../app-btn';
+import styles from './akt-revise-table.module.sass';
 
 interface IAktReviseTableProps {
     tableId: string;

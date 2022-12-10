@@ -2,8 +2,7 @@ import { FC, useState } from 'react';
 import Link from 'next/link';
 
 import { LayoutLogin } from '../../components/layouts';
-import AppBtn from '../../components/app-btn';
-import AppInput from '../../components/app-input';
+import { AppBtn, AppInput } from '../../components/app';
 import styles from './logUp.module.sass';
 
 const LogUp: FC = () => {

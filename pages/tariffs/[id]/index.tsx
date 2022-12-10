@@ -1,15 +1,15 @@
 import { FC } from 'react';
 import { GetStaticPropsContext, GetStaticProps, GetStaticPaths } from 'next';
-import { tariffsList } from '../../../common/data.variables';
+import { TariffsActivatedCard, TariffsFundsCard, TariffsInfo } from '../../../components/pages/tariffs';
+import { InnerDocsSenderCard } from '../../../components/pages/inner-docs';
+import { AppCard } from '../../../components/app';
 import { LayoutMain } from '../../../components/layouts';
-import { Tariff } from '../../../components/tariffs/tariffs-list-item/tariffs-list-item.interfaces';
-import AppCard from '../../../components/app-card';
+import { Tariff } from '../../../components/pages/tariffs/tariffs-list-item/tariffs-list-item.interfaces';
+import { tariffsList } from '../../../common/data.variables';
 import RowForm from '../../../components/forms/row-form';
-import TariffsInfo from '../../../components/tariffs/tariffs-info';
-import AppBtn from '../../../components/app-btn';
+import AppBtn from '../../../components/app/app-btn';
 import styles from './by-id.module.sass';
-import TariffsActivatedCard from '../../../components/tariffs/tariffs-activated-card';
-import TariffsFundsCard from '../../../components/tariffs/tariffs-funds-card';
+import InnerDocsStatusCard from '../../../components/pages/inner-docs/inner-docs-status-card';
 
 const TariffsById: FC<{tariff: Tariff | undefined}> = ({ tariff }) => {
     return (
@@ -73,6 +73,8 @@ const TariffsById: FC<{tariff: Tariff | undefined}> = ({ tariff }) => {
             </AppCard>
             <TariffsActivatedCard />
             <TariffsFundsCard />
+            <InnerDocsSenderCard />
+            <InnerDocsStatusCard status="draft" />
         </LayoutMain>
     )
 }

@@ -1,7 +1,5 @@
 import { FC } from 'react';
-import AppInput from '../../app-input';
-import AppLabel from '../../app-label';
-import AppSelect from '../../app-select';
+import { AppInput, AppLabel, AppSelect } from '../../app';
 import RowForm from '../row-form';
 
 const ProcuratoryConfidantForm: FC = () => {

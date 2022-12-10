@@ -1,7 +1,5 @@
 import { FC } from 'react';
-import AppDate from '../../app-date';
-import AppInput from '../../app-input';
-import AppLabel from '../../app-label';
+import { AppDate, AppInput, AppLabel } from '../../app';
 import RowForm from '../row-form';
 
 const AktTopForm: FC = () => {

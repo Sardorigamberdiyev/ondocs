@@ -2,7 +2,7 @@ import axios from 'axios';
 
 let urls = {
     test: 'http://localhost:5001',
-    development: 'http://localhost:5000',
+    development: 'https://api.onlinefactura.uz',
     production: 'http://localhost:5000'
 }
 

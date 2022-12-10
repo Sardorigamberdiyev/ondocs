@@ -1,11 +1,8 @@
 import { FC, useState, useEffect } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { LayoutTable } from '../../layouts';
+import { AppTable, AppTableFoot, AppTableHead, AppTableRow } from '../../app';
 import { IAktReviseTableListProps } from './akt-revise-table-list.interfaces';
-import AppTable from '../../app-table';
-import AppTableFoot from '../../app-table-foot';
-import AppTableHead from '../../app-table-head';
-import AppTableRow from '../../app-table-row';
 import AktReviseTable from '../akt-revise-table/akt-revise-table';
 import styles from './akt-revise-table-list.module.sass';
 

@@ -1,0 +1,36 @@
+@import ../../../styles/common.colors
+@import ../../../styles/common.extend
+
+.languageDropdown
+    cursor: auto
+    padding: .5rem
+    position: absolute
+    top: 100%
+    right: 0
+    background-color: white
+    border-bottom-left-radius: .5rem
+    border-bottom-right-radius: .5rem
+    box-shadow: 0 10px 10px 1px $transparentBlack
+    transition-duration: .1s
+    visibility: hidden
+    opacity: 0
+
+    &__show
+        visibility: visible
+        opacity: 1
+
+    &__list
+        margin: 0
+        padding: 0
+        list-style-type: none
+
+        &__item
+            padding: 4px 0
+            font-weight: bold
+            display: flex
+            align-items: center
+            color: $black
+            cursor: pointer
+
+            &__img
+                margin-right: .5rem

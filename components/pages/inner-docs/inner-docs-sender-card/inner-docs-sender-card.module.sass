@@ -1,0 +1,90 @@
+@import ../../../../styles/common.colors
+@import ../../../../styles/common.extend
+
+%iconStyle
+    width: 15px
+    height: 15px
+    background-color: $mediumGray
+    margin-right: 12px
+
+%strongStyle
+    color: $darkGray
+    min-width: 120px
+    margin-right: 12px
+    font-weight: 500
+
+.innerDocsSenderCard
+    width: 60%
+    
+    &__header
+
+        &__flexBetween
+            display: flex
+            align-items: center
+            justify-content: space-between
+
+            h2
+                color: $black
+                margin: 0
+
+            span
+                font-size: 14px
+                color: $blue
+        
+        &__number
+            color: $black
+            font-weight: bold
+
+        &__pin
+            color: $lightGreen
+            font-size: 14px
+
+    &__body
+        margin: 1rem 0
+
+        &__sender
+            display: flex
+
+            &__name
+                color: $black
+
+            strong
+                @extend %strongStyle
+
+    &__footer
+        display: flex
+        align-items: flex-end
+        justify-content: space-between
+
+        &__date
+            display: flex
+
+            &__value
+                color: $black
+
+            strong
+                @extend %strongStyle
+
+        &__btns
+            display: flex
+            align-items: center
+            font-size: 14px
+
+            &__btn
+                display: flex
+                align-items: center
+                background-color: transparent
+                border: 1px solid $mediumGray
+                padding: .5rem 1rem
+                color: $black
+
+                &:nth-child(1)
+                    margin-right: .5rem
+
+    &__printIcon
+        @extend %printIcon
+        @extend %iconStyle
+
+    &__downloadIcon
+        @extend %downloadIcon
+        @extend %iconStyle

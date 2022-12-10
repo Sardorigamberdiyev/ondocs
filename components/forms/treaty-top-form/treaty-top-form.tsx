@@ -1,8 +1,6 @@
 import { FC } from 'react';
+import { AppDate, AppInput, AppLabel } from '../../app';
 import RowForm from '../row-form';
-import AppDate from '../../app-date';
-import AppInput from '../../app-input';
-import AppLabel from '../../app-label';
 
 const TreatyTopForm: FC = () => {
     return (

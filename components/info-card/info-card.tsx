@@ -1,12 +1,12 @@
 import { FC } from 'react';
 import { useRouter } from 'next/router';
+import { AppCard, AppBtn } from '../app';
 import { InfoCardProps } from './info-card.interfaces';
-import AppBtn from '../app-btn';
 import styles from './info-card.module.sass';
-import AppCard from '../app-card';
 
 const InfoCard: FC<InfoCardProps> = (props) => {
     const { text, count, iconColor, iconUrl, go } = props;
+
     const router = useRouter();
     return (
         <AppCard className={styles.infoCard}>

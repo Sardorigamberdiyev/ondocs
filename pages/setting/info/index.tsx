@@ -1,7 +1,6 @@
 import { FC } from 'react';
 import { LayoutSetting } from '../../../components/layouts';
-import AppInput from '../../../components/app-input';
-import AppLabel from '../../../components/app-label';
+import { AppInput, AppLabel } from '../../../components/app';
 import RowForm from '../../../components/forms/row-form';
 import styles from './info.module.sass';
 

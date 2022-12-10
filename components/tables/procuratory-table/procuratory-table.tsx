@@ -1,9 +1,7 @@
 import { FC, useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
-import AppTableBody from '../../app-table-body';
-import AppTableHead from '../../app-table-head';
-import AppTableRow from '../../app-table-row';
 import { LayoutTable } from '../../layouts';
+import { AppTableBody, AppTableHead, AppTableRow } from '../../app';
 import ProcuratoryTableRow from '../procuratory-table-row';
 import styles from './procuratory-table.module.sass';
 

@@ -1,12 +1,7 @@
 import { FC, useState, useEffect } from 'react';
 import { LayoutSetting } from '../../../components/layouts';
+import { AppBtn, AppInput, AppTable, AppTableHead, AppTableRow, AppTableBody } from '../../../components/app';
 import { codesList } from '../../../common/data.variables';
-import AppBtn from '../../../components/app-btn';
-import AppInput from '../../../components/app-input';
-import AppTable from '../../../components/app-table';
-import AppTableHead from '../../../components/app-table-head';
-import AppTableRow from '../../../components/app-table-row';
-import AppTableBody from '../../../components/app-table-body';
 import CodeTableRow from '../../../components/tables/code-table-row';
 import styles from './codes.module.sass';
 

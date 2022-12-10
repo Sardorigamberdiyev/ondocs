@@ -1,0 +1,35 @@
+@import ../../../../styles/common.colors
+
+.newsSlideItem
+    background-color: white
+    transition-duration: .2s
+
+    &__header
+        display: flex
+        align-items: center
+
+        &__title
+            color: $black
+            margin: 0
+
+        &__importance
+            font-size: 15px
+            color: $pink
+
+        &__newsDate
+            margin: 0 1.5rem
+            width: 190px
+            font-size: 15px
+
+            span
+                height: 12px
+
+    &__footer
+        display: flex
+        align-items: center
+        justify-content: flex-end
+
+        &__aboutBtn
+            text-decoration: none
+            font-size: 15px
+            color: $blue

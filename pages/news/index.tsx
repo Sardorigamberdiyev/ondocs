@@ -1,8 +1,8 @@
 import { FC } from 'react';
 import { LayoutMain } from '../../components/layouts';
+import { AppList } from '../../components/app';
+import { NewsList } from '../../components/pages/news';
 import { newsList } from '../../common/data.variables';
-import NewsList from '../../components/news/news-list';
-import AppList from '../../components/app-list';
 
 const News: FC = () => {
     return (

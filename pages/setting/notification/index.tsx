@@ -1,8 +1,6 @@
 import { FC } from 'react';
 import { LayoutSetting } from '../../../components/layouts';
-import AppBtn from '../../../components/app-btn';
-import AppInput from '../../../components/app-input';
-import AppLabel from '../../../components/app-label';
+import { AppBtn, AppInput, AppLabel } from '../../../components/app';
 import FormWrapper from '../../../components/form-wrapper';
 import RowForm from '../../../components/forms/row-form';
 import styles from './notification.module.sass';

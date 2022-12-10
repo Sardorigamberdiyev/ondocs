@@ -1,14 +1,12 @@
 import { FC } from 'react';
 import { LayoutDocumentCreation, LayoutMain } from '../../../components/layouts';
+import { AppCard, AppTextarea, AppInput } from '../../../components/app';
 import { aktPlaceholder } from '../../../common/text.variables';
-import AppCard from '../../../components/app-card';
 import AktTopForm from '../../../components/forms/akt-top-form';
-import styles from './akt.module.sass';
 import FormWrapper from '../../../components/form-wrapper';
 import AktMiddleForm from '../../../components/forms/akt-middle-form';
-import AppTextarea from '../../../components/app-textarea';
 import AktTable from '../../../components/tables/akt-table';
-import AppInput from '../../../components/app-input';
+import styles from './akt.module.sass';
 
 const Akt: FC = () => {
     return (

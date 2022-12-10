@@ -1,10 +1,7 @@
 import { FC, useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { LayoutTable } from '../../layouts';
-import AppTableBody from '../../app-table-body';
-import AppTableFoot from '../../app-table-foot';
-import AppTableHead from '../../app-table-head';
-import AppTableRow from '../../app-table-row';
+import { AppTableBody, AppTableFoot, AppTableHead, AppTableRow } from '../../app';
 import AktTableRow from '../akt-table-row';
 import styles from './akt-table.module.sass';
 

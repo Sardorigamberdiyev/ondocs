@@ -1,7 +1,5 @@
 import { FC, useState, useEffect } from 'react';
-import AppBtn from '../../app-btn';
-import AppInput from '../../app-input';
-import AppTextarea from '../../app-textarea';
+import { AppBtn, AppInput, AppTextarea } from '../../app';
 import styles from './treaty-content-form.module.sass';
 
 interface ITreatyContentFormProps {

@@ -1,0 +1,86 @@
+@import ../../../styles/common.colors
+@import ../../../styles/common.extend
+
+%iconStyle
+    width: 12px
+    height: 12px
+    background-color: $black
+    cursor: pointer
+
+.settingDropdown
+    min-width: 300px
+    visibility: hidden
+    opacity: 0
+    transition-duration: .2s
+    cursor: auto
+    border-bottom-left-radius: .5rem
+    border-bottom-right-radius: .5rem
+    background-color: white
+    z-index: 999
+    padding: 1rem
+    position: absolute
+    top: 100%
+    right: 0
+
+    &__show
+        visibility: visible
+        opacity: 1
+
+    &__toggle
+        width: 34px
+        height: 18px
+
+    &__question
+        margin-right: .5rem
+        border-radius: 50%
+        display: flex
+        align-items: center
+        justify-content: center
+        background-color: $lightGreen
+
+    &__btn
+        margin-bottom: 1rem
+        display: flex
+        align-items: center
+        justify-content: space-between
+        font-size: 14px
+        color: $black
+
+        &:nth-child(1)
+            .settingDropdown
+                &__btn
+                    &__left
+                        cursor: pointer
+
+        &:nth-last-child(1)
+            margin-bottom: 0
+
+        &__left
+            display: flex
+            align-items: center
+
+    &__questionIcon
+        @extend %questionIcon
+
+    &__rightArrowIcon
+        @extend %rightArrowIcon
+        @extend %iconStyle
+
+    &__plusIcon
+        @extend %plusIcon
+        @extend %iconStyle
+
+    &__minusIcon
+        @extend %minusIcon
+        @extend %iconStyle
+        margin-right: .5rem
+
+    &__textIcon
+        @extend %textIcon
+        background-color: $black
+        margin-right: .5rem
+
+    &__visibilityIcon
+        @extend %visibilityIcon
+        background-color: $black
+        margin-right: .5rem

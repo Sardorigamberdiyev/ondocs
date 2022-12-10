@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import AppBtn from '../../app-btn';
+import { AppBtn } from '../../app';
 import styles from './stir-warn.module.sass';
 
 const StirWarn: FC = () => {

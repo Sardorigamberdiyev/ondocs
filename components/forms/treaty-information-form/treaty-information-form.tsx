@@ -1,10 +1,7 @@
 import { FC, useState, useEffect } from 'react';
-import { Option } from '../../app-select/app-select';
+import { AppInput, AppLabel, AppSelect, AppBtn } from '../../app';
+import { Option } from '../../app/app-select/app-select';
 import RowForm from '../row-form';
-import AppInput from '../../app-input';
-import AppLabel from '../../app-label';
-import AppSelect from '../../app-select';
-import AppBtn from '../../app-btn';
 import styles from './treaty-information-form.module.sass';
 
 interface ITreatyInformationFormProps {

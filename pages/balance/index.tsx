@@ -1,12 +1,10 @@
 import { FC } from 'react';
-import { LayoutMain } from '../../components/layouts';
 import Image from 'next/image';
-import AppInput from '../../components/app-input';
-import AppLabel from '../../components/app-label';
+
+import { LayoutMain } from '../../components/layouts';
+import { AppInput, AppLabel, AppCard, AppBtn } from '../../components/app';
 import FormWrapper from '../../components/form-wrapper';
 import RowForm from '../../components/forms/row-form';
-import AppCard from '../../components/app-card';
-import AppBtn from '../../components/app-btn';
 import styles from './balance.module.sass';
 
 const Balance: FC = () => {

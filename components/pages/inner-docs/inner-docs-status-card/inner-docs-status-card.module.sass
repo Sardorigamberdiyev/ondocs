@@ -1,0 +1,73 @@
+@import ../../../../styles/common.colors
+@import ../../../../styles/common.extend
+
+.innerDocsStatusCard
+    width: 38%
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+
+    &__info
+        margin-bottom: 1.5rem
+
+        h2
+            color: $black
+            margin: 0  0 .5rem 0
+
+        &__text
+            display: flex
+            align-items: center
+            color: $orange
+            line-height: 1
+            font-size: 14px
+            font-weight: bold
+
+            &__icon
+                @extend %iconStyle
+                margin-right: .5rem
+
+    &__btns
+
+        &__row
+            display: flex
+            align-items: center
+
+            &:nth-last-child(1)
+                margin-top: 1rem
+
+            &__btnSign,
+            &__btnCopy,
+            &__btnCancel
+                width: 162px
+                display: flex
+                align-items: center
+                line-height: 1
+
+            &__btnSign
+                background-color: $lightGreen
+                margin-right: 1rem
+
+            &__btnCancel
+                background-color: $pink
+
+    &__acceptIcon
+        @extend %acceptIcon
+        margin-right: .5rem
+
+    &__cancelIcon
+        @extend %cancelIcon
+        margin-right: .5rem
+
+    &__copyIcon
+        @extend %copyIcon
+        margin-right: .5rem
+
+    &__seenIcon
+        @extend %seenIcon
+        background-color: $lightGreen
+        margin-right: .5rem
+
+    &__locationIcon
+        @extend %locationIcon
+        background-color: $mediumGray
+        margin-right: .5rem

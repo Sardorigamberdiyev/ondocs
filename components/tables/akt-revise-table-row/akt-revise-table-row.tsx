@@ -1,7 +1,6 @@
 import { FC, useState, useEffect } from 'react';
 import { IAktReviseTableRowProps } from './akt-revise-table-row.interfaces';
-import AppDate from '../../app-date';
-import AppTableRow from '../../app-table-row';
+import { AppDate, AppTableRow } from '../../app';
 import styles from './akt-revise-table-row.module.sass';
 
 const AktReviseTableRow: FC<IAktReviseTableRowProps> = (props) => {

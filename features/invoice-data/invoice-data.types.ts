@@ -59,6 +59,12 @@ interface IFacturaDoc {
     facturaDate: Date | null;
 }
 
+interface IOldFacturaDoc {
+    oldFacturaId: string | null;
+    oldFacturaNo: string | null;
+    oldFacturaDate: Date | null;
+}
+
 export interface INational {
     name: string;
     account: string;
@@ -89,9 +95,10 @@ interface IProductList {
 }
 
 export interface IInvoiceDataState {
-    facturaType: number;
+    facturaType: string;
     singleSidedType: boolean;
     facturaDoc: IFacturaDoc;
+    oldFacturaDoc: IOldFacturaDoc;
     contractDoc: IContractDoc;
     facturaEmpowermentDoc: IEmpowermentDoc & IAgentDoc;
     itemReleasedDoc: IItemReleasedDoc;

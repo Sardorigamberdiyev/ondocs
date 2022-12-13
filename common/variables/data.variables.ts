@@ -3,11 +3,12 @@ import { Colors } from './color.variables';
 
 export const invoiceTypeList: Option[] = [
     {label: 'Стандарт', value: '0'},
-    {label: 'Дополнительно', value: '1'},
-    {label: 'Возмещение затрат', value: '2'},
-    {label: 'Корректор', value: '3'},
-    {label: 'Без оплаты', value: '4'},
-    {label: 'Корректор возмещение затрат', value: '5'}
+    {label: 'Дополнительный', value: '1'},
+    {label: 'Возмещение расходов (газ электроэнергия и др)', value: '2'},
+    {label: 'Без оплаты', value: '3'},
+    {label: 'Исправленный', value: '4'},
+    {label: 'Исправленный (возмещение затрат)', value: '5'},
+    {label: 'Дополнительный (возмещение затрат)', value: '6'}
 ];
 
 export const ndsPercentsData: Option[] = [

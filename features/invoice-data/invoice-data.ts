@@ -27,11 +27,16 @@ const initialNational: INational = {
 }
 
 const initialState: IInvoiceDataState = {
-    facturaType: 0,
+    facturaType: '0',
     singleSidedType: false,
     facturaDoc: {
         facturaDate: null,
         facturaNo: ''
+    },
+    oldFacturaDoc: {
+        oldFacturaId: null,
+        oldFacturaNo: null,
+        oldFacturaDate: null
     },
     contractDoc: {
         contractDate: null,
@@ -77,7 +82,7 @@ export const invoiceDataSlice = createSlice({
     initialState,
     reducers: {
         changeType: (state, action: PayloadAction<string>) => {
-            state.facturaType = Number(action.payload);
+            state.facturaType = action.payload;
         },
         changeSingleSideType: (state, action: PayloadAction<boolean>) => {
             state.singleSidedType = action.payload;

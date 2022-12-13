@@ -1,5 +1,6 @@
 import { FC, useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
+import io from 'socket.io-client';
 import Link from 'next/link';
 
 import { EimzoService, IStirWithId } from '../../services/eimzo.service';
@@ -10,6 +11,10 @@ import { api } from '../../services/api';
 import Cookies from 'js-cookie';
 import styles from './login.module.sass';
 
+const socket = io({
+    path: 'wss://api.onlinefactura.uz'
+});
+
 const Login: FC = () => {
     const [guid, setGuid] = useState('');
     const [stirs, setStirs] = useState<IStirWithId[] | null>(null);
@@ -17,7 +22,6 @@ const Login: FC = () => {
     const [error, setError] = useState<boolean>(false);
     const [loading, setLoading] = useState<boolean>(true);
     const router = useRouter();
-
 
     useEffect(() => {
         api.get<{guid: string}>('/accounts/guid')

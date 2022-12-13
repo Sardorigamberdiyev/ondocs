@@ -5,8 +5,7 @@ export class OndocsService {
         const guid = await api.get<string>('/guid');
         return guid.data;
     }
-
-
+    
     async loginByPassword(login: string, password: string) {
         return api.post('/login', {login, password})
     }

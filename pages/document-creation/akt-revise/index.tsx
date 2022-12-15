@@ -2,12 +2,12 @@ import { FC } from 'react';
 import { ITableData } from '../../../components/tables/akt-revise-table/akt-revise-table.interfaces';
 import { AppCard, AppLabel, AppDate, AppInput, AppTextarea } from '../../../components/app';
 import { LayoutDocumentCreation, LayoutMain } from '../../../components/layouts';
-import { aktRevisePlaceholder } from '../../../common/text.variables';
-import styles from './akt-revise.module.sass';
+import { aktRevisePlaceholder } from '../../../common/variables/text.variables';
 import RowForm from '../../../components/forms/row-form';
 import FormWrapper from '../../../components/form-wrapper';
 import AktReviseOrganizationForm from '../../../components/forms/akt-revise-organization-form';
 import AktReviseTableList from '../../../components/tables/akt-revise-table-list';
+import styles from './akt-revise.module.sass';
 
 const AktRevise: FC = () => {
 

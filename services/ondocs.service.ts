@@ -1,20 +1,16 @@
-import { api } from './api';
+import { AxiosInstance } from 'axios';
+import { AuthService } from './auth/auth.service';
+import { IAuthService } from './auth/auth.service.interface';
 
 export class OndocsService {
-    public async getGuid(): Promise<string> {
-        const guid = await api.get<string>('/guid');
-        return guid.data;
-    }
+    public auth: IAuthService;
     
-    async loginByPassword(login: string, password: string) {
-        return api.post('/login', {login, password})
+    constructor(private api: AxiosInstance) {
+        this.auth = new AuthService(api);
     }
 
-    async register(firstName: string, lastName: string) {
-        return api.post('/register', {firstName, lastName});
-    }
-
-    loginByStir(keyId: string) {
-
+    public async getGuid(): Promise<string> {
+        const guid = await this.api.get<string>('/guid');
+        return guid.data;
     }
 }

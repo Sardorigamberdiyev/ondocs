@@ -14,9 +14,9 @@ import InvoicePaperPrint from './invoice-paper-print';
 import InvoiceTable from './invoice-table';
 import RowForm from '../../forms/row-form';
 import OldFacturaDoc from './invoice-forms/old-factura-doc';
-import styles from './invoice.module.sass';
 import FormWrapper from '../../form-wrapper';
 import National from './invoice-forms/national';
+import styles from './invoice.module.sass';
 
 const Invoice: FC<IInvoice> = () => {
     const [showPaper, setShowPaper] = useState(false);
@@ -185,6 +185,7 @@ const Invoice: FC<IInvoice> = () => {
                                 rightContent={
                                     <>
                                         <ToggleSwitch text="Односторонний счет?"
+                                        className={styles.invoice__sigleSideToggle}
                                         checked={singleSidedType}
                                         onChange={handleChangeSingleSide} />
                                         {hasCommittent && (

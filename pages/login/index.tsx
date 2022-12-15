@@ -1,6 +1,5 @@
 import { FC, useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
-import io from 'socket.io-client';
 import Link from 'next/link';
 
 import { EimzoService, IStirWithId } from '../../services/eimzo.service';
@@ -11,12 +10,9 @@ import { api } from '../../services/api';
 import Cookies from 'js-cookie';
 import styles from './login.module.sass';
 
-const socket = io({
-    path: 'wss://api.onlinefactura.uz'
-});
-
 const Login: FC = () => {
-    const [guid, setGuid] = useState('');
+    const [guid, setGuid] = useState<string | null>(null);
+    const [socket, setSocket] = useState<WebSocket | null>(null);
     const [stirs, setStirs] = useState<IStirWithId[] | null>(null);
     const [stirId, setStirId] = useState<null | string>(null);
     const [error, setError] = useState<boolean>(false);
@@ -25,9 +21,25 @@ const Login: FC = () => {
 
     useEffect(() => {
         api.get<{guid: string}>('/accounts/guid')
-            .then((res) => setGuid(res.data.guid))
+            .then((res) => {
+                console.log(res.data.guid);
+                setGuid(res.data.guid)
+            })
             .catch((err) => console.log(err));
-    }, [])
+    }, []);
+
+    useEffect(() => {
+        console.log(`wss://api.onlinefactura.uz/websockets/${guid}/`);
+        if (guid)
+            setSocket(new WebSocket(`wss://api.onlinefactura.uz/wss/websockets/${guid}/`));
+    }, [guid]);
+
+    useEffect(() => {
+        if (socket) {
+            socket.onopen = (e) => console.log('connected in websoket')
+            socket.onmessage = (e) => console.log(JSON.parse(e.data));
+        }
+    }, [socket]);
 
     useEffect(() => {
         EIMZOClient.checkVersion(async (arg1: any, arg2: any) => {

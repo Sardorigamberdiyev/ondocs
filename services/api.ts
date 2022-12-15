@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-let urls = {
+const urls = {
     test: 'http://localhost:5001',
     development: 'https://api.onlinefactura.uz',
     production: 'http://localhost:5000'

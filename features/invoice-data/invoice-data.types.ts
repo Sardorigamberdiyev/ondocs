@@ -24,12 +24,9 @@ export interface IProduct {
     withoutVat: boolean;
 }
 
-interface IEmpowermentDoc {
+export interface IEmpowermentDoc {
     empowermentNo: string;
     empowermentDateOfIssue: Date | null;
-}
-
-interface IAgentDoc {
     agentFio: string;
     agentTin: string;
     agentPinfl: string;
@@ -100,7 +97,7 @@ export interface IInvoiceDataState {
     facturaDoc: IFacturaDoc;
     oldFacturaDoc: IOldFacturaDoc;
     contractDoc: IContractDoc;
-    facturaEmpowermentDoc: IEmpowermentDoc & IAgentDoc;
+    facturaEmpowermentDoc: IEmpowermentDoc;
     itemReleasedDoc: IItemReleasedDoc;
     foreignCompany: IForeignCompany;
     productList: IProductList;
@@ -124,4 +121,9 @@ export type ChangeProductAction = {
 export type ChangeToggleAction = {
     hasKey: keyof Omit<IInvoiceDataState['productList'], 'products' | 'tin'>;
     checked: boolean;
+};
+
+export type ChangeEmpowerment = {
+    empowermentKey: keyof Omit<IEmpowermentDoc, 'empowermentDateOfIssue'>;
+    empowermentValue: string;
 };

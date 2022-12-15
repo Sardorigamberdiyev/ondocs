@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { LayoutDocumentCreation, LayoutMain } from '../../../components/layouts';
 import { AppCard, AppTextarea, AppInput } from '../../../components/app';
-import { aktPlaceholder } from '../../../common/text.variables';
+import { aktPlaceholder } from '../../../common/variables/text.variables';
 import AktTopForm from '../../../components/forms/akt-top-form';
 import FormWrapper from '../../../components/form-wrapper';
 import AktMiddleForm from '../../../components/forms/akt-middle-form';

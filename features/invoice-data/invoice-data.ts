@@ -1,6 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { ProductEntity } from './entities/product.entity';
 import { 
+    ChangeEmpowerment,
     ChangeNationalAction, 
     ChangeProductAction, 
     ChangeToggleAction, 
@@ -108,6 +109,13 @@ export const invoiceDataSlice = createSlice({
 
             state.productList.products[productIndex] = {...product, [productKey]: productValue};
         },
+        changeEmpowerment: (state, action: PayloadAction<ChangeEmpowerment>) => {
+            const { empowermentKey, empowermentValue } = action.payload;
+            state.facturaEmpowermentDoc = {...state.facturaEmpowermentDoc, [empowermentKey]: empowermentValue};
+        },
+        changeEmpowermentDate: (state, action: PayloadAction<Date | null>) => {
+            state.facturaEmpowermentDoc.empowermentDateOfIssue = action.payload;
+        },
         addProduct: ({ productList: { products } }) => {
             products.push({...(new ProductEntity())});
         },
@@ -127,7 +135,9 @@ export const {
     addProduct, 
     removeLastProduct, 
     changeType,
-    changeSingleSideType
+    changeSingleSideType,
+    changeEmpowerment,
+    changeEmpowermentDate
 } = invoiceDataSlice.actions;
 
 export default invoiceDataSlice.reducer;
